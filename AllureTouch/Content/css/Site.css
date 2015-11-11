@@ -1,4 +1,14 @@
-﻿body {
+﻿@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Regular.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/Montserrat-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/Montserrat-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/Montserrat-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/Montserrat-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+body {
     padding-top: 20px;
     padding-bottom: 20px;
     font-family: "Montserrat", sans-serif;
@@ -20,14 +30,4 @@ textarea {
     max-width: 280px;
 }
 
-@font-face {
-font-family: Montserrat;
-src: url("/fonts/Montserrat-Regular.otf") format("opentype");
-}
-
-@font-face {
-font-family: Montserrat-bold;
-font-weight: bold;
-src: url("/fonts/Montserrat-Bold.otf") format("opentype");
-}
 
