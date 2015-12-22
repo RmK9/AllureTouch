@@ -1,3 +1,22 @@
+html {
+    height: 100%;
+}
+
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/Montserrat-Regular.eot'); /* IE9 Compat Modes */
@@ -16,21 +35,6 @@
        url('../fonts/Raleway-Regular.woff') format('woff'), /* Pretty Modern Browsers */
        url('../fonts/Raleway-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
        url('../fonts/Raleway-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
-}
-
-body {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    letter-spacing: 1.5px;
-}
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -108,6 +112,7 @@ textarea {
     background-color: black;
     font: 400 13px "Raleway", "Open Sans", "Arial", sans-serif;
     letter-spacing: 0;
+    margin-bottom: -20px;
 }
 
 .fa-stack.fa-lg {
