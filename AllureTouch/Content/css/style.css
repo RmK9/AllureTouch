@@ -1,19 +1,157 @@
-#logo {
-    padding-bottom: 2em;
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Montserrat-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Montserrat-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Montserrat-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Montserrat-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Raleway-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Raleway-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Raleway-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Raleway-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.upper-social-icons {
+    padding-left: 20px;
+    padding-top: 55px;
+    display: inline-block;
+    float: left;
+}
+
+.fb-link {
+    color: #3b5998;
+}
+
+.tw-link {
+    color: #00aced;
+}
+
+.pn-link {
+    color: #cb2027;
+}
+
+.in-link {
+    color: #125688;
+}
+
+.gp-link {
+    color: #dd4b39;
+}
+
+.upper-navbar-social-media-links {
+    -webkit-transition: color 500ms ease;
+    -moz-transition: color 500ms ease;
+    -ms-transition: color 500ms ease;
+    -o-transition: color 500ms ease;
+    transition: color 500ms ease;
+}
+
+.upper-navbar-social-media-links:hover {
+    color: black;
+}
+
+.upper-logo {
+    width: 41%;
+    display: inline-block;
+}
+
+.logo {
+    float: right;
+    display: inline-block;
+    padding: 8px 0 25px;
 }
 
 /* navbar customisation */
+.navbar-default {
+    background-image: none;
+    -ms-border-radius: 0;
+    border-radius: 0;
+}
+
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
     vertical-align: top;
 }
 
+.navbar-bottom {
+    border: 0;
+    background-color: black;
+    font: 400 13px "Raleway", "Open Sans", "Arial", sans-serif;
+    letter-spacing: 0;
+}
+
+.fa-stack.fa-lg {
+    margin-right: 8px;
+}
+
+.footer-links {
+    width: 50%;
+    margin: 50px auto;
+    color: gray;
+}
+
+.footer-links p a {
+    color: gray;
+}
+
+.ssl-seal-img {
+    width: 130px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#footer-copyright-text {
+    padding-bottom: 50px;
+}
+
+.lower-navbar-social-media-links {
+    -webkit-transition: color 500ms ease;
+    -moz-transition: color 500ms ease;
+    -ms-transition: color 500ms ease;
+    -o-transition: color 500ms ease;
+    transition: color 500ms ease;
+    color: #333;
+}
+
+.lower-navbar-social-media-links:hover {
+    color: rgb(224, 162, 64);
+}
+
 .navbar .navbar-collapse {
     text-align: center;
 }
 
-.navbar-default {
+.upper-navbar {
     background-color: transparent;
 }
 

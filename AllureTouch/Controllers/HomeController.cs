@@ -12,6 +12,8 @@ namespace AllureTouch.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            var k = 1;
+
             return View(new IndexModel());
         }
 
@@ -52,6 +54,21 @@ namespace AllureTouch.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        [ActionName("privacy-policy")]
+        public ActionResult PrivacyPolicy()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [ActionName("terms-of-service")]
+        public ActionResult TermsOfService()
+        {
+            return View();
+        }
+
 
     }
 }
