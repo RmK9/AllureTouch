@@ -44,11 +44,24 @@ textarea {
     max-width: 280px;
 }
 
-.upper-social-icons {
-    padding-left: 20px;
-    padding-top: 55px;
+#head .container-fluid {
+    position: relative;
+}
+
+.upper-logo {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.logo {
     display: inline-block;
-    float: left;
+}
+
+.upper-social-icons {
+    position: absolute;
+    left: 40px;
+    top: 55px;
+    display: inline-block;
 }
 
 .fb-link {
@@ -83,16 +96,6 @@ textarea {
     color: black;
 }
 
-.upper-logo {
-    width: 41%;
-    display: inline-block;
-}
-
-.logo {
-    float: right;
-    display: inline-block;
-    padding: 8px 0 25px;
-}
 
 /* navbar customisation */
 .navbar-default {
@@ -160,13 +163,10 @@ textarea {
     background-color: transparent;
 }
 
-    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-        color: #ff4d00;
-    }
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #ff4d00;
+}
 
-    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-        color: #ff4d00;
-    }
-/*
-text #999999
-hover #ff4d00*/
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #ff4d00;
+}

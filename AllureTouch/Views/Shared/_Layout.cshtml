@@ -14,149 +14,152 @@
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="~/Content/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
     <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css"/>
     <link href="~/Content/css/hovernav.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/css/jquery.bxslider.css" rel="stylesheet"/>
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 
 <body>
-
-<div id="head">
-    <div class="container-fluid">
-        <div class="upper-social-icons">
-            <span class="fa-stack fa-lg">
-                <a class="upper-navbar-social-media-links fb-link" href="https://www.facebook.com/AllureTouch/">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </a>
-            </span>
-            <span class="fa-stack fa-lg">
-                <a class="upper-navbar-social-media-links tw-link" href="https://twitter.com/AllureTouch">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                </a>
-            </span>
-            <span class="fa-stack fa-lg">
-                <a class="upper-navbar-social-media-links pn-link" href="https://www.pinterest.com/alluretouch/">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
-                </a>
-            </span>
-            <span class="fa-stack fa-lg">
-                <a class="upper-navbar-social-media-links in-link" href="https://www.instagram.com/alluretouch/">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                </a>
-            </span>
-            <span class="fa-stack fa-lg">
-                <a class="upper-navbar-social-media-links gp-link" href="https://plus.google.com/u/0/+Alluretouch/about">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-                </a>
-            </span>
-        </div>
-        <div class="upper-logo">
-            <a class="logo center-block" href="@Url.Action("Index", "Home")">
-                <img src="@Url.Content("~/Content/images/logo.jpg")" alt="AllureTouch" class="img-responsive center-block" />
-            </a>
-        </div>
-    </div>
-
-    <nav class="navbar navbar-default upper-navbar">
+    <div id="head">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li id="menu-item-home" class="active"><a title="Home page" href="@Url.Action("index", "Home")">HOME<span class="sr-only">(current)</span></a></li>
-                    <li id="menu-item-services"><a title="Services &amp; Prices" href="@Url.Action("services-and-prices", "Home")">SERVICES &amp; PRICES</a></li>
-                    <li id="menu-item-portfolio">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PORTFOLIO <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li id="menu-item-realistic"><a title="Realistic Photo Editing" href="@Url.Action("realistic", "Home")">REALISTIC PHOTO EDITING</a></li>
-                            <li id="menu-item-fashion"><a title="Fashion &amp; Creative Photo Editing" href="@Url.Action("fashion", "Home")">FASHION &amp; CREATIVE PHOTO EDITING</a></li>
-                        </ul>
-                    </li>
-                    <li id="menu-item-faq"><a title="FAQ" href="@Url.Action("faq", "Home")">FAQ</a></li>
-                    <li id="menu-item-blog"><a title="Blog" href="@Url.Action("blog", "Home")">BLOG</a></li>
-                    <li id="menu-item-contact"><a title="Contact Us" href="@Url.Action("contact-us", "Home")">CONTACT US</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</div>
-
-<div id="content">
-    @RenderBody()
-</div>
-
-<div id="footer">
-    <nav class="navbar navbar-default navbar-bottom" role="navigation">
-        <div class="container">
-            <div class="text-center footer-links">
-                <p>
-                    <a title="Home page" href="@Url.Action("Index", "Home")">Home</a> |
-                    <a title="FAQ" href="@Url.Action("faq", "Home")">FAQ</a> |
-                    <a title="Blog" href="@Url.Action("blog", "Home")">Blog</a> |
-                    <a title="Contact Us" href="@Url.Action("contact-us", "Home")">Contact Us</a> |
-                    <a title="Privacy Policy" href="@Url.Action("privacy-policy", "Home")">Privacy Policy</a> |
-                    <a title="Terms of Service" href="@Url.Action("terms-of-service", "Home")">Terms of Service</a>
-                </p>
-                <br/>
+            <div class="upper-social-icons">
                 <span class="fa-stack fa-lg">
-                    <a class="lower-navbar-social-media-links" href="https://www.facebook.com/AllureTouch/">
+                    <a class="upper-navbar-social-media-links fb-link" href="https://www.facebook.com/AllureTouch/">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
                     </a>
                 </span>
                 <span class="fa-stack fa-lg">
-                    <a class="lower-navbar-social-media-links" href="https://twitter.com/AllureTouch">
+                    <a class="upper-navbar-social-media-links tw-link" href="https://twitter.com/AllureTouch">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                     </a>
                 </span>
                 <span class="fa-stack fa-lg">
-                    <a class="lower-navbar-social-media-links" href="https://www.pinterest.com/alluretouch/">
+                    <a class="upper-navbar-social-media-links pn-link" href="https://www.pinterest.com/alluretouch/">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
                     </a>
                 </span>
                 <span class="fa-stack fa-lg">
-                    <a class="lower-navbar-social-media-links" href="https://www.instagram.com/alluretouch/">
+                    <a class="upper-navbar-social-media-links in-link" href="https://www.instagram.com/alluretouch/">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
                     </a>
                 </span>
                 <span class="fa-stack fa-lg">
-                    <a class="lower-navbar-social-media-links" href="https://plus.google.com/u/0/+Alluretouch/about">
+                    <a class="upper-navbar-social-media-links gp-link" href="https://plus.google.com/u/0/+Alluretouch/about">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
                     </a>
                 </span>
-                <br/>
-                <img class="ssl-seal-img" src="~/Content/images/ssl_seal_1.png"/>
-                <br/>
-                <p id="footer-copyright-text">Copyright AllureTouch 2015. All Rights Reserved</p>
-
+            </div>
+            <div class="upper-logo">
+                <a class="logo" href="@Url.Action("Index", "Home")">
+                    <img src="@Url.Content("~/Content/images/logo.jpg")" alt="AllureTouch" class="img-responsive center-block" />
+                </a>
             </div>
         </div>
-    </nav>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/Main.js"></script>
-    <script src="~/Scripts/hovernav.js"></script>
-    <script src="~/Scripts/jssor.slider.mini.js"></script>
-</div>
+        <nav class="navbar navbar-default upper-navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
 
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li id="menu-item-home" class="active"><a title="Home page" href="@Url.Action("index", "Home")">HOME<span class="sr-only">(current)</span></a></li>
+                        <li id="menu-item-services"><a title="Services &amp; Prices" href="@Url.Action("services-and-prices", "Home")">SERVICES &amp; PRICES</a></li>
+                        <li id="menu-item-portfolio">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PORTFOLIO <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li id="menu-item-realistic"><a title="Realistic Photo Editing" href="@Url.Action("realistic", "Home")">REALISTIC PHOTO EDITING</a></li>
+                                <li id="menu-item-fashion"><a title="Fashion &amp; Creative Photo Editing" href="@Url.Action("fashion", "Home")">FASHION &amp; CREATIVE PHOTO EDITING</a></li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-faq"><a title="FAQ" href="@Url.Action("faq", "Home")">FAQ</a></li>
+                        <li id="menu-item-blog"><a title="Blog" href="@Url.Action("blog", "Home")">BLOG</a></li>
+                        <li id="menu-item-contact"><a title="Contact Us" href="@Url.Action("contact-us", "Home")">CONTACT US</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
 
+    <div id="content">
+        @RenderBody()
+    </div>
+
+    <div id="footer">
+        <nav class="navbar navbar-default navbar-bottom" role="navigation">
+            <div class="container">
+                <div class="text-center footer-links">
+                    <p>
+                        <a title="Home page" href="@Url.Action("Index", "Home")">Home</a> |
+                        <a title="FAQ" href="@Url.Action("faq", "Home")">FAQ</a> |
+                        <a title="Blog" href="@Url.Action("blog", "Home")">Blog</a> |
+                        <a title="Contact Us" href="@Url.Action("contact-us", "Home")">Contact Us</a> |
+                        <a title="Privacy Policy" href="@Url.Action("privacy-policy", "Home")">Privacy Policy</a> |
+                        <a title="Terms of Service" href="@Url.Action("terms-of-service", "Home")">Terms of Service</a>
+                    </p>
+                    <br />
+                    <span class="fa-stack fa-lg">
+                        <a class="lower-navbar-social-media-links" href="https://www.facebook.com/AllureTouch/">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack fa-lg">
+                        <a class="lower-navbar-social-media-links" href="https://twitter.com/AllureTouch">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack fa-lg">
+                        <a class="lower-navbar-social-media-links" href="https://www.pinterest.com/alluretouch/">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack fa-lg">
+                        <a class="lower-navbar-social-media-links" href="https://www.instagram.com/alluretouch/">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack fa-lg">
+                        <a class="lower-navbar-social-media-links" href="https://plus.google.com/u/0/+Alluretouch/about">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                        </a>
+                    </span>
+                    <br />
+                    <a href="https://www.ssl.com/site_seals/8108747e-55d9ed42/site_report"
+                       onclick="window.open('https://www.ssl.com/site_seals/8108747e-55d9ed42/site_report', 'site_report','height=500, width=400, top=100, left=100'); return false;">
+                        <img class="ssl-seal-img" src="~/Content/images/ssl_seal_1.png" />
+                    </a>
+                    <br />
+                    <p id="footer-copyright-text">Copyright AllureTouch 2015. All Rights Reserved</p>
+
+                </div>
+            </div>
+        </nav>
+
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/hovernav.js"></script>
+        @* Slider stuff *@
+        <script src="~/Scripts/jquery.bxslider.min.js"></script>
+        @* End of Slider stuff *@
+        <script src="~/Scripts/Main.js"></script>
+    </div>
 
 </body>
 </html>
