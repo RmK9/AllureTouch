@@ -58,6 +58,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data.Entity.EF6, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -99,6 +101,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AllureTouchDbEntityDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AllureTouchDbEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>AllureTouchDbEntityDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AllureTouchDbEntityDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AllureTouchDbEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>AllureTouchDbEntityDataModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -135,6 +147,14 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
+    <EntityDeploy Include="AllureTouchDbEntityDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AllureTouchDbEntityDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="AllureTouchDbEntityDataModel.edmx.diagram">
+      <DependentUpon>AllureTouchDbEntityDataModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\hovernav.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -148,6 +168,21 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllureTouchDbEntityDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllureTouchDbEntityDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AllureTouchDbEntityDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllureTouchDbEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AllureTouchDbEntityDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllureTouchDbEntityDataModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -155,11 +190,11 @@
     </Compile>
     <Compile Include="Models\IndexModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="user.cs">
+      <DependentUpon>AllureTouchDbEntityDataModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -175,6 +210,7 @@
     <Content Include="Views\Home\Contact-Us.cshtml" />
     <Content Include="Views\Home\Privacy-Policy.cshtml" />
     <Content Include="Views\Home\Terms-Of-Service.cshtml" />
+    <Content Include="Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -187,6 +223,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
