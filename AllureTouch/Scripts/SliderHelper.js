@@ -4,7 +4,7 @@
 
     //Slider init
     $(".bxslider").show().bxSlider({
-        auto: true,
+        //auto: true,
         captions: true,
         pause: 6000,
         speed: 1000,
@@ -13,18 +13,21 @@
         pager: false
     });
 
-    $(".bx-viewport").css("height", $(".slide1").width() / 1.9);
+    $(".bx-viewport").css("height", $(window).width() / 1.9);
 
-    //Parallax effect (X-Browser) - Some mobile browsers may stutter though
-    $.stellar({
-        horizontalScrolling: false,
-        hideDistantElements: false
-    });
+    //Init Parallax if not mobile device - uses jquery.detect.mobile.min.js - http://detectmobilebrowsers.com/
+    if (!$.browser.mobile) {
+        //Parallax effect (X-Browser) - Dropped mobile support
+        $.stellar({
+            horizontalScrolling: false,
+            hideDistantElements: false
+        });
+    }
 
     //Fix Slider responsiveness
     fixSliderResponsiveness();
 
-    $(window).resize(function () {
+    $(window).bind("resize", function () {
         fixSliderResponsiveness();
     });
 
@@ -32,7 +35,15 @@
 
 //Fixes Slider responsiveness
 function fixSliderResponsiveness() {
-    $(".slide1").css("height", $(".slide1").width() / 1.9);
-    $(".slide2").css("height", $(".slide1").width() / 1.9);
-    $(".slide3").css("height", $(".slide1").width() / 1.9);
+    var height = $(window).width() / 1.9;
+    if ($(window).height() > $(window).width()) {
+        height = $(window).height() / 1.9;
+        $(".slide1, .slide2, .slide3").css({ "height": height, "background-position": "0 0" });
+        if ($(window).height() > $(window).width()+230) {
+                    $(".slide1, .slide2, .slide3").css({ "height": height, "background-position": "-100px 50%" });
+        }
+    } else {
+        $(".slide1, .slide2, .slide3").css({ "height": height, "background-position": "0 0" });
+    }
+    $(".bx-viewport").css("height", "auto");
 }

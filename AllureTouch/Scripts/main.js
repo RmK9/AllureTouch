@@ -25,7 +25,7 @@
     //Fix upper page responsiveness
     fixUpperPageResponsiveness();
 
-    $(window).resize(function () {
+    $(window).bind("resize", function () {
         fixUpperPageResponsiveness();
     });
 });
@@ -33,7 +33,14 @@
 //Fixes upper page responsiveness
 function fixUpperPageResponsiveness() {
     if ($(window).width() < 825) {
-        $(".upper-social-icons").css({ "position": "static", "padding-left": "25px", "padding-bottom": "10px" });
+        $(".upper-social-icons").css({
+            "position": "relative",
+            "display": "block",
+            "text-align": "center",
+            "left": "5px",
+            "top": "0",
+            "padding-bottom": "15px"
+        });
     } else {
         $(".upper-social-icons").css({ "position": "absolute", "left": "40px", "top": "55px" });
     }

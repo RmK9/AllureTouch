@@ -12,7 +12,6 @@ body {
     letter-spacing: 1.5px;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -38,13 +37,45 @@ body {
        url('../fonts/Raleway-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+@font-face {
+  font-family: 'Awesome';
+  src: url('../fonts/fontawesome-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/fontawesome-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/fontawesome-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/fontawesome-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/fontawesome-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+/* Body - Pages Styles */
+.bxslider {
+    color: white;
+    font-family: "Awesome", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0px;
+}
+
+.slide1-text {
+    position: relative;
+    top: 100px;
+    display: inline-block;
+    /*text-align: center;*/
+}
+
+.slide1-text .bg-color-text {
+    background-color: #cbcbcb;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.slide1-text .bg-red-box {
+    background-color: #fd6c6c;
+    background-color: rgba(255, 0, 0, 0.4);
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* Header */
 #head .container-fluid {
     position: relative;
 }
@@ -97,8 +128,22 @@ textarea {
     color: black;
 }
 
+.navbar .navbar-collapse {
+    text-align: center;
+}
 
-/* navbar customisation */
+.upper-navbar {
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #ff4d00;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #ff4d00;
+}
+
 .navbar-default {
     background-image: none;
     -ms-border-radius: 0;
@@ -110,6 +155,9 @@ textarea {
     float: none;
     vertical-align: top;
 }
+
+
+/* Footer Styles */
 
 .navbar-bottom {
     border: 0;
@@ -152,18 +200,6 @@ textarea {
     color: rgb(224, 162, 64);
 }
 
-.navbar .navbar-collapse {
-    text-align: center;
-}
-
-.upper-navbar {
-    background-color: transparent;
-}
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: #ff4d00;
-}
-
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #ff4d00;
+#ssl-link {
+    text-decoration: none;
 }
