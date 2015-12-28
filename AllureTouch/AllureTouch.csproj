@@ -101,6 +101,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\fonts\LatoLatin-Bold.svg" />
     <Content Include="Content\images\arrows.png" />
     <Content Include="EntityFramework\AllureTouchEntityDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -156,6 +157,10 @@
     <Content Include="EntityFramework\AllureTouchEntityDataModel.edmx.diagram">
       <DependentUpon>AllureTouchEntityDataModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\fonts\LatoLatin-Bold.eot" />
+    <Content Include="Content\fonts\LatoLatin-Bold.ttf" />
+    <Content Include="Content\fonts\LatoLatin-Bold.woff" />
+    <Content Include="Content\fonts\LatoLatin-Bold.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\hovernav.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

@@ -4,7 +4,7 @@
 
     //Slider init
     $(".bxslider").show().bxSlider({
-        //auto: true,
+        auto: true,
         captions: true,
         pause: 6000,
         speed: 1000,
