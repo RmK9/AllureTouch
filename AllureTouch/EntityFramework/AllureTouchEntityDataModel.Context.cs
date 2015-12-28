@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AllureTouch
+namespace AllureTouch.EntityFramework
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AllureTouchDbEntities : DbContext
+    public partial class alluretouchdbEntities : DbContext
     {
-        public AllureTouchDbEntities()
-            : base("name=AllureTouchDbEntities")
+        public alluretouchdbEntities()
+            : base("name=alluretouchdbEntities")
         {
         }
     
@@ -25,6 +25,7 @@ namespace AllureTouch
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<imageediting> imageeditings { get; set; }
+        public virtual DbSet<order> orders { get; set; }
     }
 }

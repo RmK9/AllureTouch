@@ -101,15 +101,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AllureTouchDbEntityDataModel.Context.tt">
+    <Content Include="EntityFramework\AllureTouchEntityDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AllureTouchDbEntityDataModel.edmx</DependentUpon>
-      <LastGenOutput>AllureTouchDbEntityDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>AllureTouchEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>AllureTouchEntityDataModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="AllureTouchDbEntityDataModel.tt">
+    <Content Include="EntityFramework\AllureTouchEntityDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AllureTouchDbEntityDataModel.edmx</DependentUpon>
-      <LastGenOutput>AllureTouchDbEntityDataModel.cs</LastGenOutput>
+      <DependentUpon>AllureTouchEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>AllureTouchEntityDataModel.cs</LastGenOutput>
     </Content>
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
@@ -147,52 +147,65 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
-    <EntityDeploy Include="AllureTouchDbEntityDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AllureTouchDbEntityDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="AllureTouchDbEntityDataModel.edmx.diagram">
-      <DependentUpon>AllureTouchDbEntityDataModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <EntityDeploy Include="EntityFramework\AllureTouchEntityDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AllureTouchEntityDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EntityFramework\AllureTouchEntityDataModel.edmx.diagram">
+      <DependentUpon>AllureTouchEntityDataModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\hovernav.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.bxslider.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.mousewheel.min.js" />
+    <Content Include="Scripts\jquery.simplr.smoothscroll.min.js" />
+    <Content Include="Scripts\jquery.stellar.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\sliderHelper.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllureTouchDbEntityDataModel.Context.cs">
+    <Compile Include="EntityFramework\AllureTouchEntityDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AllureTouchDbEntityDataModel.Context.tt</DependentUpon>
+      <DependentUpon>AllureTouchEntityDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="AllureTouchDbEntityDataModel.cs">
+    <Compile Include="EntityFramework\AllureTouchEntityDataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AllureTouchDbEntityDataModel.tt</DependentUpon>
+      <DependentUpon>AllureTouchEntityDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AllureTouchDbEntityDataModel.Designer.cs">
+    <Compile Include="EntityFramework\AllureTouchEntityDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AllureTouchDbEntityDataModel.edmx</DependentUpon>
+      <DependentUpon>AllureTouchEntityDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="EntityFramework\imageediting.cs">
+      <DependentUpon>AllureTouchEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\order.cs">
+      <DependentUpon>AllureTouchEntityDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IndexModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="user.cs">
-      <DependentUpon>AllureTouchDbEntityDataModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -211,6 +224,11 @@
     <Content Include="Views\Home\Privacy-Policy.cshtml" />
     <Content Include="Views\Home\Terms-Of-Service.cshtml" />
     <Content Include="Views\web.config" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

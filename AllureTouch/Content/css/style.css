@@ -3,6 +3,7 @@ html {
 }
 
 body {
+    position: relative;
     padding-top: 20px;
     padding-bottom: 20px;
     font-family: "Montserrat", sans-serif;
@@ -112,7 +113,7 @@ textarea {
 
 .navbar-bottom {
     border: 0;
-    background-color: black;
+    background-color: #151515;
     font: 400 13px "Raleway", "Open Sans", "Arial", sans-serif;
     letter-spacing: 0;
     margin-bottom: -20px;
@@ -136,10 +137,6 @@ textarea {
     width: 130px;
     margin-top: 30px;
     margin-bottom: 30px;
-}
-
-#footer-copyright-text {
-    padding-bottom: 50px;
 }
 
 .lower-navbar-social-media-links {

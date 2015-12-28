@@ -15,8 +15,8 @@
     <link href="~/Content/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
     <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link href="~/Content/css/hovernav.css" rel="stylesheet" type="text/css"/>
-    <link href="~/Content/css/jquery.bxslider.css" rel="stylesheet"/>
-    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/jquery.bxslider.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css"/>
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 
@@ -153,12 +153,18 @@
         </nav>
 
         <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/jquery.easing.1.3.js"></script>
         <script src="~/Scripts/bootstrap.min.js"></script>
         <script src="~/Scripts/hovernav.js"></script>
         @* Slider stuff *@
-        <script src="~/Scripts/jquery.bxslider.min.js"></script>
+        @* Loads only on main page *@
+        @RenderSection("JavaScript", required: false)
         @* End of Slider stuff *@
-        <script src="~/Scripts/Main.js"></script>
+        @* Scrolling stuff *@
+        <script src="~/Scripts/jquery.mousewheel.min.js"></script>
+        <script src="~/Scripts/jquery.simplr.smoothscroll.min.js"></script>
+        @* End of Scrolling stuff *@
+        <script src="~/Scripts/main.js"></script>
     </div>
 
 </body>

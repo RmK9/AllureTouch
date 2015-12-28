@@ -7,7 +7,7 @@ namespace AllureTouch.Models
 {
     public class IndexModel
     {
-        private string name { get; set; }
+        public string FirstName { get; set; }
 
 
     }

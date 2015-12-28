@@ -1,9 +1,28 @@
 ﻿@model AllureTouch.Models.IndexModel
 
-<ul class="bxslider">
-    <li><img src="~/Content/images/slider-images/1.jpg" /></li>
-    <li><img src="~/Content/images/slider-images/2.jpg" /></li>
-    <li><img src="~/Content/images/slider-images/3.jpg" /></li>
-</ul>
+@section JavaScript{
+    <script src="~/Scripts/jquery.bxslider.min.js"></script>
+    <script src="~/Scripts/jquery.stellar.min.js"></script>
+    <script src="~/Scripts/sliderHelper.js"></script>
+}
 
-<h2>BLA</h2>
+
+<div class="bxslider" data-stellar-ratio="0.7">
+
+    <div id="loader-gif">
+        <img src="~/Content/images/bx_loader.gif"/>
+    </div>
+    <div>
+        <div class="slide1">
+            <p style="background-color: green; display: inline-block;">&nbsp; Some tessad asdsa dsadsad ad</p>
+            <p style="background-color: white; display: inline-block;">&nbsp; tessad asdsa dsadsad ad</p>
+        </div>
+    </div>
+    <div>
+        <div class="slide2"></div>
+    </div>
+    <div>
+        <div class="slide3"></div></div>
+</div>
+
+<h1 class="text-center">Meet AllureTouch Photo Editing Team</h1>

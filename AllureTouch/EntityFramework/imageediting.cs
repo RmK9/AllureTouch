@@ -7,17 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AllureTouch
+namespace AllureTouch.EntityFramework
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class user
+    public partial class imageediting
     {
-        public long Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public System.DateTime RegDate { get; set; }
+        public int ImageId { get; set; }
+        public int OrderId { get; set; }
+        public string ImageName { get; set; }
+        public string ImagePath { get; set; }
+        public string EditingType { get; set; }
+        public string EditingDescription { get; set; }
+    
+        public virtual order order { get; set; }
     }
 }

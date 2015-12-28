@@ -1,17 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AllureTouch.Models;
+using AllureTouch.EntityFramework;
 
 namespace AllureTouch.Controllers
 {
     public class HomeController : Controller
     {
+
+        private readonly alluretouchdbEntities _entities = new alluretouchdbEntities();
+
         [HttpGet]
         public ActionResult Index()
         {
+            //var p = _entities.users.First();
+
             var k = 1;
 
             return View(new IndexModel());
