@@ -7,7 +7,10 @@
     img.onload = function () {
         console.log("image loaded");
         //Slider init
-        $(".bxslider").show().bxSlider({
+        $(".bxslider").fadeIn({
+            duration: 1300,
+            easing: "easeInCubic"
+        }).bxSlider({
             auto: true,
             captions: true,
             pause: 6000,
