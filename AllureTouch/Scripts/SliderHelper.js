@@ -1,31 +1,40 @@
 ﻿$(document).ready(function () {
-    //Slider init
-    $(".bxslider").show().bxSlider({
-        auto: true,
-        captions: true,
-        pause: 6000,
-        speed: 1000,
-        useCSS: false,
-        easing: "easeInOutCubic",
-        pager: false,
-        onSliderLoad: function() {
-            $("#loader-gif").remove();
-        }
-    });
+
+    var src = $(".slide1").css("background-image");
+    var url = src.match(/\((.*?)\)/)[1].replace(/('|")/g, '');
+
+    var img = new Image();
+    img.onload = function () {
+        console.log("image loaded");
+        //Slider init
+        $(".bxslider").show().bxSlider({
+            auto: true,
+            captions: true,
+            pause: 6000,
+            speed: 1000,
+            useCSS: false,
+            easing: "easeInOutCubic",
+            pager: false,
+            onSliderLoad: function() {
+                $("#loader-gif").remove();
+            }
+        });
  
-    $(".bx-viewport").css("height", $(window).width() / 1.9);
+        $(".bx-viewport").css("height", $(window).width() / 1.9);
+        //Init Parallax if not mobile device - uses jquery.detect.mobile.min.js - http://detectmobilebrowsers.com/
+        if (!$.browser.mobile) {
+            //Parallax effect (X-Browser) - Dropped mobile support
+            $.stellar({
+                horizontalScrolling: false,
+                hideDistantElements: false
+            });
+        }
+    }
+    img.src = url;
+    if (img.complete) img.onload();
 
     //Fix Slider responsiveness
     fixSliderResponsiveness();
-
-    //Init Parallax if not mobile device - uses jquery.detect.mobile.min.js - http://detectmobilebrowsers.com/
-    if (!$.browser.mobile) {
-        //Parallax effect (X-Browser) - Dropped mobile support
-        $.stellar({
-            horizontalScrolling: false,
-            hideDistantElements: false
-        });
-    }
 
     $(window).bind("resize", function () {
         fixSliderResponsiveness();
@@ -46,5 +55,4 @@ function fixSliderResponsiveness() {
         $(".slide1, .slide2, .slide3").css({ "height": height, "background-position": "0 0" });
     }
     $(".bx-viewport").css("height", "auto");
-    console.log("inside resize " + $(".slide1").css("width"));
 }
