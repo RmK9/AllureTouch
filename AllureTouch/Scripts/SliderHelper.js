@@ -1,7 +1,4 @@
 ﻿$(document).ready(function () {
-    //Remove loader gif
-    $("#loader-gif").remove();
-
     //Slider init
     $(".bxslider").show().bxSlider({
         auto: true,
@@ -10,10 +7,16 @@
         speed: 1000,
         useCSS: false,
         easing: "easeInOutCubic",
-        pager: false
+        pager: false,
+        onSliderLoad: function() {
+            $("#loader-gif").remove();
+        }
     });
-
+ 
     $(".bx-viewport").css("height", $(window).width() / 1.9);
+
+    //Fix Slider responsiveness
+    fixSliderResponsiveness();
 
     //Init Parallax if not mobile device - uses jquery.detect.mobile.min.js - http://detectmobilebrowsers.com/
     if (!$.browser.mobile) {
@@ -23,9 +26,6 @@
             hideDistantElements: false
         });
     }
-
-    //Fix Slider responsiveness
-    fixSliderResponsiveness();
 
     $(window).bind("resize", function () {
         fixSliderResponsiveness();
@@ -46,4 +46,5 @@ function fixSliderResponsiveness() {
         $(".slide1, .slide2, .slide3").css({ "height": height, "background-position": "0 0" });
     }
     $(".bx-viewport").css("height", "auto");
+    console.log("inside resize " + $(".slide1").css("width"));
 }
