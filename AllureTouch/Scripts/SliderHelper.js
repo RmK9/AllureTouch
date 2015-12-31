@@ -1,11 +1,10 @@
 ﻿$(document).ready(function () {
-
+    //Load slider when first image loaded
     var src = $(".slide1").css("background-image");
     var url = src.match(/\((.*?)\)/)[1].replace(/('|")/g, '');
 
     var img = new Image();
     img.onload = function () {
-        console.log("image loaded");
         //Slider init
         $(".bxslider").fadeIn({
             duration: 1300,

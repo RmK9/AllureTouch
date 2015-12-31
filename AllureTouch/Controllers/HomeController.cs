@@ -32,24 +32,28 @@ namespace AllureTouch.Controllers
         }
 
         [HttpGet]
+        [ActionName("realistic")]
         public ActionResult Realistic()
         {
             return View();
         }
 
         [HttpGet]
-        public ActionResult Fashion()
+        [ActionName("fashion-and-creative")]
+        public ActionResult FashionAndCreative()
         {
             return View();
         }
 
         [HttpGet]
+        [ActionName("faq")]
         public ActionResult Faq()
         {
             return View();
         }
 
         [HttpGet]
+        [ActionName("blog")]
         public ActionResult Blog()
         {
             return View();

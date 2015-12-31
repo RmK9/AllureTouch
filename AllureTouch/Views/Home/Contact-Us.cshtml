@@ -1,3 +1,60 @@
-﻿
-<h2>Contact Us</h2>
+﻿<div id="main-content-container">
+    <h1 class="text-center title">Contact Us</h1>
+    <img src="~/Content/images/line-diamond-line.png" class="center-block line-diamond-line-separator" />
 
+    <form id="contact-us-form">
+        <div class="form-group">
+            <input type="text" class="form-control" id="name" placeholder="Name" autofocus required>
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" id="email" placeholder="Email" data-fv-field="email" required>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" id="message" placeholder="Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-default">SUBMIT</button>
+    </form>
+
+    <br />
+
+    <div class="row animated-container">
+        <div class="col-xs-12 col-sm-6 col-md-4 email-container">
+            <div class="text-center">
+                <div>
+                    <i class="fa fa-envelope fa-3x"></i>
+                    <p>EMAIL</p>
+                </div>
+                <p id="below-email-container" class="below-container">
+                    General Inquiries: info@AllureTouch.com<br/>
+                    Billing: billing@AllureTouch.com
+                </p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 address-container">
+            <div class="text-center">
+                <div>
+                    <i class="fa fa-building fa-3x"></i>
+                    <p>MAILING ADDRESS</p>
+                </div>
+                <p id="below-address-container" class="below-container">
+                    Pavas, Rorhmoser, 106th Street, 17th Avenue<br/>
+                    San Jose 10109, Costa Rica
+                </p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 hours-container">
+            <div class="text-center">
+                <div>
+                    <i class="fa fa-clock-o fa-3x"></i>
+                    <p>OFFICE HOURS</p>
+                </div>
+                <p id="below-hours-container" class="below-container">
+                    Monday thru Friday: 8am to 6pm EST
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
