@@ -47,30 +47,27 @@
 //Contact us page animated containers
 //onClick event binder
 function bindContainers() {
-    $(".animated-container .email-container").hover(
-        //onHover
-        function() {
-            changeStylesToAnimatedContent(this, true);
-            //onHoverOut
-        }, function() {
-             changeStylesToAnimatedContent(this, false);
-        });
-    $(".animated-container .address-container").hover(
-        //onHover
-        function() {
-            changeStylesToAnimatedContent(this, true);
-            //onHoverOut
-        }, function() {
-             changeStylesToAnimatedContent(this, false);
-        });
-    $(".animated-container .hours-container").hover(
-        //onHover
-        function() {
-            changeStylesToAnimatedContent(this, true);
-            //onHoverOut
-        }, function() {
-             changeStylesToAnimatedContent(this, false);
-        });
+    $(".animated-container .email-container").on({
+        mouseenter: function () { changeStylesToAnimatedContent(this, true) },
+        click: function() { changeStylesToAnimatedContent(this, true) },
+        mouseleave: function() { changeStylesToAnimatedContent(this, false) },
+        focusout: function() { changeStylesToAnimatedContent(this, false) }
+    });
+
+    $(".animated-container .address-container").on({
+        mouseenter: function () { changeStylesToAnimatedContent(this, true) },
+        click: function () { changeStylesToAnimatedContent(this, true) },
+        mouseleave: function () { changeStylesToAnimatedContent(this, false) },
+        focusout: function () { changeStylesToAnimatedContent(this, false) }
+    });
+ 
+    $(".animated-container .hours-container").on({
+        mouseenter: function () { changeStylesToAnimatedContent(this, true) },
+        click: function () { changeStylesToAnimatedContent(this, true) },
+        mouseleave: function () { changeStylesToAnimatedContent(this, false) },
+        focusout: function () { changeStylesToAnimatedContent(this, false) }
+    });
+
     //Disable bottom text container to fire hover effect to prevent unexpected behaviour
     $(".animated-container div .below-container").hover(function (evt) { evt.stopPropagation(); return false; });
 }
