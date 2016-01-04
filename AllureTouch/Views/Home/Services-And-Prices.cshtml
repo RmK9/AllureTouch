@@ -1,3 +1,164 @@
 ﻿
-<h2>Services &amp; Prices</h2>
+@section ExtraJS {
+    <script src="~/Scripts/pie-chart.min.js"></script>
+    <script src="~/Scripts/jquery.visible.min.js"></script>
+    <script>
+        //Services and Prices JS Helper
+        $(document).ready(function() {
+            var executed = false;
+            $(window).scroll(function() {
+                //Init PieChart and Start Percentage counting when visible
+                if ($(".pie-title-center").visible()) {
+                    $(".pie-title-center").pieChart({
+                        barColor: "black",
+                        trackColor: "#e1e5e8",
+                        lineCap: "round",
+                        lineWidth: 10
+                    });
+                    if (!executed) {
+                        countPercentagesWithInterval($("#pie-value-1"), 60);
+                        countPercentagesWithInterval($("#pie-value-2"), 50);
+                        countPercentagesWithInterval($("#pie-value-3"), 30);
+                        executed = true;
+                    }
+                }
+            });
+        });
 
+        function countPercentagesWithInterval(elem, updateSpeed) {
+            var val = 0;
+            var percent = $(elem).parent(".pie-title-center").data("percent");
+            var interval = setInterval(function () {
+                if (val >= percent) {
+                    clearInterval(interval);
+                }
+                $(elem).text(val + "%");
+                val++;
+            }, updateSpeed);
+        }
+    </script>
+}
+
+<div id="main-container" class="services-and-prices-container">
+    <h1 class="text-center title">Check Out Our Photo Editing Prices and Services</h1>
+    <img src="~/Content/images/line-diamond-line.png" class="center-block line-diamond-line-separator" />
+    <p class="text-center italic-text after-title center-block">
+        Pricing table below will help you to compare and choose the desired service(s).
+        You can choose some or all of the features listed in the table, according to your needs.
+    </p>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <ul class="pricing-list">
+                <li class="service-title">
+                    <p>Realistic Photo Editing</p>
+                </li>
+                <li class="service-price-and-delivery">
+                    <h1>6.99$ per picture</h1>
+                    <p class="italic-text">Delivery time: in 24 hours per picture</p>
+                </li>
+                <li class="li-item-grey">
+                    <p>Background cleaning (or: background replacement for extra 4$)</p>
+                </li>
+                <li class="li-item-white">
+                    <p>Realistic enhancement of skin, hair, eyes, lips, teeth</p>
+                </li>
+                <li class="li-item-grey">
+                    <p>Realistic enhancement of body and clothes</p>
+                </li>
+                <li class="li-item-white">
+                    <p>Realistic makeup of your choice or natural look</p>
+                </li>
+                <li class="li-item-grey">
+                    <p>Basic color correction and photo effects</p>
+                </li>
+                <li class="li-item-bottom">
+                    <p>Supporting any picture format, delivering JPEG</p>
+                    <div class="text-center black-button-container">
+                        <a href="@Url.Action("order-form", "Home")">
+                            <p class="bg-black-box">&nbsp;GET STARTED&nbsp;</p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="text-center red-button-container">
+                <a href="@Url.Action("realistic", "Home")">
+                    <p class="bg-red-box no-margins">&nbsp;CLICK HERE TO VIEW PORTFOLIO&nbsp;</p>
+                </a>
+            </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <ul class="pricing-list">
+                <li class="service-title">
+                    <p>Fashion or Creative Photo Editing</p>
+                </li>
+                <li class="service-price-and-delivery">
+                    <h1>15.99$ per picture</h1>
+                    <p class="italic-text">Delivery time: in 24-48 Hours per picture</p>
+                </li>
+                <li class="li-item-grey">
+                    <p>Background removal and replacement</p>
+                </li>
+                <li class="li-item-white">
+                    <p>Enhancement or deep alteration of skin, hair, eyes, lips, teeth</p>
+                </li>
+                <li class="li-item-grey">
+                    <p>Realistic or deep alteration of body and clothes</p>
+                </li>
+                <li class="li-item-white">
+                    <p>Realistic, high fashion or creative makeup</p>
+                </li>
+                <li class="li-item-grey">
+                    <p>Complex photo effects, photo montage, any desired look</p>
+                </li>
+                <li class="li-item-bottom">
+                    <p>Supporting any picture format, delivering JPEG</p>
+                    <div class="text-center black-button-container">
+                        <a href="@Url.Action("order-form", "Home")">
+                            <p class="bg-black-box">&nbsp;GET STARTED&nbsp;</p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="text-center red-button-container">
+                <a href="@Url.Action("fashion-and-creative", "Home")">
+                    <p class="bg-red-box no-margins">&nbsp;CLICK HERE TO VIEW PORTFOLIO&nbsp;</p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <p>
+        Have any specific requirements for your photo editing that are not listed in the pricing table?
+        You will be able to submit your instructions for photo editing and your expectations to the order form.
+        <a href="@Url.Action("faq", "Home")">Click Here</a> to learn more about how it works.
+    </p>
+
+    <hr class="center-block lower-hr"/>
+
+    <div class="row percentage-circles-container">
+        <p class="text-center lato-bold">Volume discounts apply to the following:</p>
+        <div class="col-xs-12 col-sm-4 text-center">
+            <div class="pie-title-center" data-percent="10">
+                <span id="pie-value-1" class="pie-value">0%</span>
+            </div>
+            <p>5 - 15 Photos</p>
+        </div>
+        <div class="col-xs-12 col-sm-4 text-center">
+            <div class="pie-title-center" data-percent="15">
+                <span id="pie-value-2" class="pie-value">0%</span>
+            </div>
+            <p>16 - 25 Photos</p>
+        </div>
+        <div class="col-xs-12 col-sm-4 text-center">
+            <div class="pie-title-center" data-percent="25">
+                <span id="pie-value-3" class="pie-value">0%</span>
+            </div>
+            <p>26 Photos and More</p>
+        </div>
+
+    </div>
+
+</div>

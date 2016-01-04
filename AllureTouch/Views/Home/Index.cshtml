@@ -1,6 +1,6 @@
 ﻿@model AllureTouch.Models.IndexModel
 
-@section MainPageJS{
+@section ExtraJS {
     <script src="~/Scripts/jquery.bxslider.min.js"></script>
     <script src="~/Scripts/jquery.stellar.min.js"></script>
     <script src="~/Scripts/jquery.detect.mobile.min.js"></script>
@@ -62,7 +62,7 @@
 </div>
 
 
-<div id="main-content-container">
+<div id="main-container">
     <h1 class="text-center title">Meet AllureTouch Photo Editing Team</h1>
     <img src="~/Content/images/line-diamond-line.png" class="center-block line-diamond-line-separator" />
     <p>
@@ -86,9 +86,12 @@
     </p>
     <p>We want to change the world and make it better, happier, more creative place for us all.</p>
 
-    <a href="@Url.Action("services-and-prices", "Home")">
-        <p class="bg-red-box">&nbsp;LEARN MORE ABOUT OUR SERVICES &amp; PRICES&nbsp;</p>
-    </a>
+    <div class="text-center">
+        <a href="@Url.Action("services-and-prices", "Home")">
+            <p class="bg-red-box">&nbsp;LEARN MORE ABOUT OUR SERVICES &amp; PRICES&nbsp;</p>
+        </a>
+    </div>
+
 
     <h3 id="recent-articles">Recent Articles</h3>
     <img src="~/Content/images/line-diamond-line.png" class="center-block line-diamond-line-separator"/>

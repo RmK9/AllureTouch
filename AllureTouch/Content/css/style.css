@@ -17,6 +17,27 @@ body {
     padding-right: 15px;
 }
 
+/* Reset pre tag */
+pre {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    font-size: medium;
+    line-height: normal;
+    color: inherit;
+    -moz-word-break: normal;
+    -o-word-break: normal;
+    -ms-word-break: normal;
+    word-break: normal;
+    -ms-word-wrap: normal;
+    word-wrap: normal;
+    background-color: transparent;
+    border: none;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    overflow: visible;
+}
+
 @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/Montserrat-Regular.eot'); /* IE9 Compat Modes */
@@ -283,17 +304,17 @@ body {
 
 /* End of Slider stuff */
 
-#main-content-container {
+#main-container {
     position: relative;
     width: 86%;
     left: 7%;
-    font-family: 'Open-Sans', 'Montserrat', 'Open Sans', Arial, sans-serif;
+    font-family: 'Open-Sans', 'Montserrat', 'Lato-Bold', Arial, sans-serif;
     letter-spacing: 0;
 }
 
-#main-content-container h1.title, h3#recent-articles {
+#main-container h1.title, h3#recent-articles {
     letter-spacing: 0;
-    color: #4c4c4c;
+    color: #222222;
     font-family: "Lato-Bold", "Lucida Grande", sans-serif;
     margin-top: 120px;
 }
@@ -303,20 +324,20 @@ body {
     margin-bottom: 50px;
 }
 
-#main-content-container p {
+#main-container p {
     font-size: 15px;
     color: #4c4c4c;
     margin-bottom: 30px;
     line-height: 26px;
 }
 
-#main-content-container a {
+#main-container a {
     text-decoration: none;
-    display: block;
+    display: inline-block;
     text-align: center;
 }
 
-#main-content-container .bg-red-box {
+#main-container .bg-red-box {
     background-color: rgb(221, 51, 51);
     color: white;
     border: 1px solid white;
@@ -334,11 +355,11 @@ body {
     transition: background-color 500ms ease;
 }
 
-#main-content-container .bg-red-box:hover {
+#main-container .bg-red-box:hover {
     background-color: rgb(224, 162, 64);
 }
 
-#main-content-container #recent-articles {
+#main-container #recent-articles {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -352,23 +373,24 @@ body {
 
 /* FAQ Page */
 
-#faq-main-content-container {
+#faq-container,
+#services-and-prices-container {
     position: relative;
     width: 86%;
     left: 7%;
-    font-family: 'Open-Sans', 'Montserrat', 'Open Sans', Arial, sans-serif;
+    font-family: 'Open-Sans', 'Montserrat', 'Lato-Bold', Arial, sans-serif;
     letter-spacing: 0;
     color: #5b5b5b;
 }
 
-#faq-main-content-container h1 {
+#faq-container h1 {
     font-size: 30px;
     font-weight: 700;
     color: #222222;
     margin-top: 100px;
 }
 
-#faq-main-content-container a {
+#faq-container a {
     text-decoration: none;
 }
 
@@ -376,28 +398,27 @@ body {
     font-style: italic;
     font-size: 18px;
     margin-bottom: 30px;
-    /*font-family: 'Open Sans', 'Montserrat',  Arial, sans-serif;*/
 }
 
-#faq-main-content-container .panel-body {
+#faq-container .panel-body {
     font-size: 15px;
     line-height: 30px;
     color: #4c4c4c;
     border: none;
 }
 
-#faq-main-content-container .panel-body a,
+#faq-container .panel-body a,
 .faq-bottom-text a {
     color: #ff4d00;
 }
     
 
-#faq-main-content-container i.fa.fa-plus, 
-#faq-main-content-container i.fa.fa-minus {
+#faq-container i.fa.fa-plus, 
+#faq-container i.fa.fa-minus {
     margin-right: 15px;
 }
 
-#faq-main-content-container .panel.panel-default {
+#faq-container .panel.panel-default {
     border: none;
     margin-bottom: 20px;
     -webkit-box-shadow: none;
@@ -405,19 +426,20 @@ body {
     box-shadow: none;
 }
 
-#faq-main-content-container .panel-heading {
+#faq-container .panel-heading {
     background-image: none;
     background-color: transparent;
     border: none;
 }
 
 .faq-bottom-text {
-    max-width: 80%;
-    font-family: 'Open-Sans', 'Montserrat', 'Open Sans', Arial, sans-serif;
+    margin-top: 50px;
+    max-width: 70%;
+    font-family: 'Open-Sans', 'Montserrat', 'Lato-Bold', Arial, sans-serif;
     font-size: 16px;
 }
 
-.faq-lower-hr {
+.lower-hr {
     width: 40px;
     border: 1px solid #e8e8e8;
     margin-top: 50px;
@@ -484,7 +506,8 @@ body {
     margin-bottom: 100px;
 }
 
-#main-content-container .animated-container p {
+#main-container .animated-container p,
+#main-container .animated-container pre {
     margin-top: 10px;
     font-size: 14px;
 }
@@ -492,26 +515,218 @@ body {
 .animated-container div.col-xs-12 {
     height: 280px;
     background-color: rgb(224, 162, 64);
+    padding-left: 0;
+    padding-right: 0;
 }
 
-.animated-container div.col-xs-12.address-container {
+.animated-container div.col-xs-12 div.colored-container{
+    height: 100%;
+}
+
+.animated-container div.col-xs-12.grey-colored {
     background-color: #EFEFEF;
 }
 
-.animated-container div.col-xs-12 div div {
+.animated-container div.col-xs-12 div.text-center div {
     position: relative;
-    top: 100px;
+    top: 90px;
 }
 
-#main-content-container .animated-container .below-container {
+#main-container .animated-container .below-container {
     position: relative;
     font-size: 14px;
     color: white;
-    top: 190px;
+    top: 188px;
     visibility: hidden;
+    width: 81%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+#main-container .animated-container .below-container::-moz-selection {
+     background: rgb(241, 188, 82);
+}
+
+#main-container .animated-container .below-container::selection {
+     background: rgb(241, 188, 82);
+}
+
+#main-container .animated-container .below-container .br-simulator {
+    display: block;
+}
+
+.content-hider {
+    height: 92px;
+    position: relative;
+    background-color: white;
 }
 
 /* End of Contact us Page */
+
+/* Services and Prices Page */
+
+#main-container.services-and-prices-container p.after-title {
+    width: 65%;
+    font-size: 18px;
+    line-height: 32px;
+    color: #5b5b5b;
+    margin-bottom: 80px;
+}
+
+#main-container.services-and-prices-container .line-diamond-line-separator {
+    margin-bottom: 40px;
+}
+
+.pricing-list {
+    font-family: 'Open-Sans', 'Montserrat', 'Lato-Bold', Arial, sans-serif;
+    letter-spacing: 0;
+    font-size: 15px;
+    line-height: 26px;
+    color: #4c4c4c;
+    border: 1px solid #eeeeee;
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.pricing-list .service-title {
+    background-color: #ff4d00;
+    height: 90px;
+}
+
+#main-container .pricing-list .service-title p {
+    color: white;
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+.pricing-list .service-title,
+.pricing-list h1,
+.pricing-list a {
+    font-family: 'Lato-Bold', 'Montserrat', 'Open Sans', Arial, sans-serif;
+}
+
+.pricing-list h1 {
+    font-size: 40px;
+    color: black;
+}
+
+#main-container .pricing-list .li-item-grey p,
+#main-container .pricing-list .li-item-white p {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 0;
+    width: 95%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#main-container .pricing-list .li-item-bottom p {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 0;
+    width: 95%;
+}
+
+.pricing-list .li-item-grey {
+    color: #7a7a7a;
+    background-color: #fafbfd;
+}
+
+#main-container .pricing-list .li-item-bottom a p.bg-black-box {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 0.8em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 13px;
+    display: inline-block;
+    width: initial;
+    -webkit-transition: background-color 500ms ease;
+    -moz-transition: background-color 500ms ease;
+    -ms-transition: background-color 500ms ease;
+    -o-transition: background-color 500ms ease;
+    transition: background-color 500ms ease;
+}
+
+#main-container .pricing-list .li-item-bottom a p.bg-black-box:hover {
+    background-color: rgb(224, 162, 64);
+}
+
+#main-container .pricing-list .bg-red-box {
+    font-family: 'Montserrat', 'Lato-Bold', 'Open Sans', Arial, sans-serif;
+}
+
+#main-container .bg-red-box.no-margins {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#main-container div.red-button-container {
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+#main-container div.black-button-container {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.services-and-prices-container a {
+    color: #ff4d00;   
+}
+
+.services-and-prices-container .lower-hr {
+    margin-bottom: 50px;
+}
+
+#main-container .percentage-circles-container {
+    margin-bottom: 50px;
+}
+
+#main-container .percentage-circles-container p.lato-bold {
+    font-family: 'Lato-Bold', 'Montserrat', 'Open Sans', Arial, sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+#main-container .percentage-circles-container .pie-title-center {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+
+#main-container .percentage-circles-container .pie-value {
+    display: block;
+    position: absolute;
+    height: 40px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -20px;
+    line-height: 40px;
+}
+
+#main-container .percentage-circles-container span,
+#main-container .percentage-circles-container p {
+    font-family: 'Lato-Bold', 'Montserrat', 'Open Sans', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+
+#main-container .percentage-circles-container p {
+    margin-top: 20px;
+}
+
+
+/* End of Services and Prices Page */
+
 
 /* Header */
 #head .container-fluid {

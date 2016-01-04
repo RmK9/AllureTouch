@@ -17,7 +17,7 @@
             useCSS: false,
             easing: "easeInOutCubic",
             pager: false,
-            onSliderLoad: function() {
+            onSliderLoad: function () {
                 $("#loader-gif").remove();
             }
         });

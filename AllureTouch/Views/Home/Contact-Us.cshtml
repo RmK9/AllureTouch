@@ -1,4 +1,9 @@
-﻿<div id="main-content-container">
+﻿
+@section ExtraJS {
+    <script src="~/Scripts/animatedContainersHelper.js"></script>
+}
+
+<div id="main-container">
     <h1 class="text-center title">Contact Us</h1>
     <img src="~/Content/images/line-diamond-line.png" class="center-block line-diamond-line-separator" />
 
@@ -21,40 +26,47 @@
     <br />
 
     <div class="row animated-container">
-        <div class="col-xs-12 col-sm-6 col-md-4 email-container">
-            <div class="text-center">
-                <div>
-                    <i class="fa fa-envelope fa-3x"></i>
-                    <p>EMAIL</p>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="email-container colored-container">
+                <div class="text-center">
+                    <div>
+                        <i class="fa fa-envelope fa-3x"></i>
+                        <p>EMAIL</p>
+                    </div>
+                    <p id="below-email-container" class="below-container">
+                        General Inquiries: info@AllureTouch.com<span class="br-simulator"></span>Billing: billing@AllureTouch.com
+                    </p>
                 </div>
-                <p id="below-email-container" class="below-container">
-                    General Inquiries: info@AllureTouch.com<br/>
-                    Billing: billing@AllureTouch.com
-                </p>
             </div>
+            <div class="content-hider"></div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 address-container">
-            <div class="text-center">
-                <div>
-                    <i class="fa fa-building fa-3x"></i>
-                    <p>MAILING ADDRESS</p>
+        <div class="col-xs-12 col-sm-12 col-md-4 grey-colored">
+            <div class="address-container colored-container">
+                <div class="text-center">
+                    <div>
+                        <i class="fa fa-building fa-3x"></i>
+                        <p>MAILING ADDRESS</p>
+                    </div>
+                    <p id="below-address-container" class="below-container">
+                        Pavas, Rorhmoser, 106th Street, 17th Avenue, San Jose 10109, Costa Rica
+                    </p>
                 </div>
-                <p id="below-address-container" class="below-container">
-                    Pavas, Rorhmoser, 106th Street, 17th Avenue<br/>
-                    San Jose 10109, Costa Rica
-                </p>
             </div>
+            <div class="content-hider"></div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 hours-container">
-            <div class="text-center">
-                <div>
-                    <i class="fa fa-clock-o fa-3x"></i>
-                    <p>OFFICE HOURS</p>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="hours-container colored-container">
+                <div class="text-center">
+                    <div>
+                        <i class="fa fa-clock-o fa-3x"></i>
+                        <p>OFFICE HOURS</p>
+                    </div>
+                    <p id="below-hours-container" class="below-container">
+                        Monday thru Friday: 8am to 6pm EST
+                    </p>
                 </div>
-                <p id="below-hours-container" class="below-container">
-                    Monday thru Friday: 8am to 6pm EST
-                </p>
             </div>
+            <div class="content-hider"></div>
         </div>
     </div>
 </div>

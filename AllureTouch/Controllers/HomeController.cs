@@ -46,6 +46,13 @@ namespace AllureTouch.Controllers
         }
 
         [HttpGet]
+        [ActionName("order-form")]
+        public ActionResult OrderForm()
+        {
+            return View();
+        }
+
+        [HttpGet]
         [ActionName("faq")]
         public ActionResult Faq()
         {

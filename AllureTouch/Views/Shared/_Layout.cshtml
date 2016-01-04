@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using AllureTouch.Helpers
+
+<!DOCTYPE html>
 <html>
 <!-- **************************************** -->
 <!-- * Developed by Roman Kolesov           * -->
@@ -75,18 +77,18 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li id="menu-item-home" class="active"><a title="Home page" href="@Url.Action("index", "Home")">HOME<span class="sr-only">(current)</span></a></li>
-                        <li id="menu-item-services"><a title="Services &amp; Prices" href="@Url.Action("services-and-prices", "Home")">SERVICES &amp; PRICES</a></li>
-                        <li id="menu-item-portfolio">
+                        <li id="menu-item-home" class="@Html.IsSelected(actions: "index", controllers: "Home")"><a title="Home page" href="@Url.Action("index", "Home")">HOME<span class="sr-only">(current)</span></a></li>
+                        <li id="menu-item-services" class="@Html.IsSelected(actions: "services-and-prices", controllers: "Home")"><a title="Services &amp; Prices" href="@Url.Action("services-and-prices", "Home")">SERVICES &amp; PRICES</a></li>
+                        <li id="menu-item-portfolio" class="@Html.IsSelected(actions: "realistic,fashion-and-creative", controllers: "Home")">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PORTFOLIO <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li id="menu-item-realistic"><a title="Realistic Photo Editing" href="@Url.Action("realistic", "Home")">REALISTIC PHOTO EDITING</a></li>
-                                <li id="menu-item-fashion"><a title="Fashion &amp; Creative Photo Editing" href="@Url.Action("fashion", "Home")">FASHION &amp; CREATIVE PHOTO EDITING</a></li>
+                                <li id="menu-item-fashion"><a title="Fashion &amp; Creative Photo Editing" href="@Url.Action("fashion-and-creative", "Home")">FASHION &amp; CREATIVE PHOTO EDITING</a></li>
                             </ul>
                         </li>
-                        <li id="menu-item-faq"><a title="FAQ" href="@Url.Action("faq", "Home")">FAQ</a></li>
-                        <li id="menu-item-blog"><a title="Blog" href="@Url.Action("blog", "Home")">BLOG</a></li>
-                        <li id="menu-item-contact"><a title="Contact Us" href="@Url.Action("contact-us", "Home")">CONTACT US</a></li>
+                        <li id="menu-item-faq" class="@Html.IsSelected(actions: "faq", controllers: "Home")"><a title="FAQ" href="@Url.Action("faq", "Home")">FAQ</a></li>
+                        <li id="menu-item-blog" class="@Html.IsSelected(actions: "blog", controllers: "Home")"><a title="Blog" href="@Url.Action("blog", "Home")">BLOG</a></li>
+                        <li id="menu-item-contact" class="@Html.IsSelected(actions: "contact-us", controllers: "Home")"><a title="Contact Us" href="@Url.Action("contact-us", "Home")">CONTACT US</a></li>
                     </ul>
                 </div>
             </div>
@@ -102,7 +104,7 @@
             <div class="container">
                 <div class="text-center footer-links">
                     <p>
-                        <a title="Home page" href="@Url.Action("Index", "Home")">Home</a> |
+                        <a title="Home page" href="@Url.Action("index", "Home")">Home</a> |
                         <a title="FAQ" href="@Url.Action("faq", "Home")">FAQ</a> |
                         <a title="Blog" href="@Url.Action("blog", "Home")">Blog</a> |
                         <a title="Contact Us" href="@Url.Action("contact-us", "Home")">Contact Us</a> |
@@ -158,8 +160,8 @@
         <script src="~/Scripts/hovernav.js"></script>
         <script src="~/Scripts/jquery.color-2.1.2.min.js"></script>
         @* Slider stuff *@
-        @* Loads only on main page *@
-        @RenderSection("MainPageJS", required: false)
+        @* Adds any other page-specific additional JS scripts *@
+        @RenderSection("ExtraJS", false)
         @* End of Slider stuff *@
         @* Scrolling stuff *@
         <script src="~/Scripts/jquery.mousewheel.min.js"></script>
