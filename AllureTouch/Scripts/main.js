@@ -1,14 +1,19 @@
 ﻿$(document).ready(function() {
     //Configure bootstrap navbar onHover event
-    $("#menu-item-portfolio").mouseout(function() {
-        $(".dropdown-toggle").css("color", "#777");
+    var navbarPortfolioItem = $("#menu-item-portfolio");
+
+    $("#menu-item-portfolio, #menu-item-portfolio ul.dropdown-menu").mouseover(function() {
+        $(".navbar-dropdown").css("color", "#ff4d00");
+        navbarPortfolioItem.addClass("open");
     });
 
-    $("#menu-item-portfolio").mouseover(function() {
-        $(".dropdown-toggle").css("color", "#ff4d00");
-        $(".dropdown-menu").mouseover(function() {
-            $(".dropdown-toggle").css("color", "#777");
-        });
+    navbarPortfolioItem.mouseout(function () {
+        if ($(this).attr("class").indexOf("active") < 0 && $(this).attr("class").indexOf("open") > -1) {
+            $(".navbar-dropdown").css("color", "#777");
+        }
+        console.log($(this).attr("class"));
+        $(this).removeClass("open");
+        console.log($(this).attr("class").indexOf("active"));
     });
 
     //Smooth Scrolling (X-Browser) - Uses jQuery Mousewheel Plugin

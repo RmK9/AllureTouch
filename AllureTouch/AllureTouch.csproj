@@ -103,6 +103,18 @@
   <ItemGroup>
     <Content Include="500.html" />
     <Content Include="404.html" />
+    <Content Include="Content\images\portfolio\realistic\natural-beauty-photo-editing-before-and-after-5.jpg" />
+    <Content Include="Content\images\portfolio\realistic\photo-editing-with-background-cleaning-and-color-adjustment-2.jpg" />
+    <Content Include="Content\images\portfolio\realistic\photo-manipulation-to-slim-down-before-and-after-1.jpg" />
+    <Content Include="Content\images\portfolio\realistic\realistic-photo-editing-6.jpg" />
+    <Content Include="Content\images\portfolio\realistic\realistic-picture-edit-before-and-after-3.jpg" />
+    <Content Include="Content\images\portfolio\realistic\realistic-picture-editing-before-and-after-4.jpg" />
+    <Content Include="Content\images\portfolio\realistic\tester.jpg" />
+    <Content Include="Content\PhotoSwipe\default-skin\default-skin.css" />
+    <Content Include="Content\PhotoSwipe\default-skin\default-skin.png" />
+    <Content Include="Content\PhotoSwipe\default-skin\default-skin.svg" />
+    <Content Include="Content\PhotoSwipe\default-skin\preloader.gif" />
+    <Content Include="Content\PhotoSwipe\photoswipe.css" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
@@ -114,6 +126,12 @@
     <Content Include="Content\fonts\OpenSans-Regular.svg" />
     <Content Include="Content\images\arrows.png" />
     <Content Include="Content\images\line-diamond-line.png" />
+    <Content Include="Content\images\portfolio\fashionAndCreative\artistic-photo-effects-before-and-after-4.jpg" />
+    <Content Include="Content\images\portfolio\fashionAndCreative\creative-picture-editing-before-and-after-1.jpg" />
+    <Content Include="Content\images\portfolio\fashionAndCreative\dark-beauty-photo-editing-6.jpg" />
+    <Content Include="Content\images\portfolio\fashionAndCreative\fashion-picture-editing-before-and-after-5.jpg" />
+    <Content Include="Content\images\portfolio\fashionAndCreative\glamour-photo-editing-before-and-after-photo-montage-2.jpg" />
+    <Content Include="Content\images\portfolio\fashionAndCreative\photo-manipulation-before-and-after-black-and-white-3.jpg" />
     <Content Include="EntityFramework\AllureTouchEntityDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AllureTouchEntityDataModel.edmx</DependentUpon>
@@ -129,7 +147,6 @@
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\font-awesome.min.css" />
-    <Content Include="Content\css\hovernav.css" />
     <Content Include="Content\css\jquery.bxslider.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\images\bx_loader.gif" />
@@ -144,7 +161,7 @@
     <Content Include="Content\images\ssl_seal_1.png" />
     <Content Include="Content\images\favicon.jpg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\AnimatedContainersHelper.js" />
+    <Content Include="Scripts\animatedContainersHelper.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\fonts\Montserrat-Regular.eot" />
@@ -176,7 +193,7 @@
     <Content Include="Content\fonts\OpenSans-Light.woff" />
     <Content Include="Content\fonts\OpenSans-Light.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\hovernav.js" />
+    <Content Include="Scripts\galleryHelper.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.bxslider.min.js" />
@@ -194,6 +211,8 @@
     <Content Include="Scripts\jquery.visible.min.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\photoswipe-ui-default.min.js" />
+    <Content Include="Scripts\photoswipe.min.js" />
     <Content Include="Scripts\pie-chart.min.js" />
     <Content Include="Scripts\sliderHelper.js" />
     <Content Include="Web.config">

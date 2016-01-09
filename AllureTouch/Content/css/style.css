@@ -312,7 +312,9 @@ pre {
     letter-spacing: 0;
 }
 
-#main-container h1.title, h3#recent-articles {
+#main-container h1.title,
+h3#recent-articles,
+#main-container h2.title {
     letter-spacing: 0;
     color: #222222;
     font-family: "Lato-Bold", "Lucida Grande", sans-serif;
@@ -725,8 +727,81 @@ pre {
 }
 
 
-/* End of Services and Prices Page */
+/* End of Services and Prices and Privacy Policy pages */
 
+/* Terms of Service page */
+
+#main-container.terms-of-service,
+#main-container.privacy-policy {
+    margin-bottom: 100px;
+}
+
+/* End of Terms of Service and Privacy Policy page  */
+
+/* Portfolio pages */
+
+#portfolio-container {
+    position: relative;
+    width: 86%;
+    left: 7%;
+    font-family: 'Open-Sans', 'Montserrat', 'Lato-Bold', Arial, sans-serif;
+    letter-spacing: 0;
+    color: #5b5b5b;
+}
+
+#portfolio-container h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #222222;
+    margin-top: 100px;
+}
+
+#portfolio-container a {
+    text-decoration: none;
+}
+
+#portfolio-container .italic-text {
+    margin-bottom: 50px;
+}
+
+#portfolio-container .picture-container {
+    margin-bottom: 50px;
+}
+
+#portfolio-container .picture-container div.col-xs-12 {
+    margin-bottom: 45px;
+}
+
+#portfolio-container .picture-container div.col-xs-12 figure {
+    text-align: center;
+    position: relative;
+}
+
+#portfolio-container .picture-container div.col-xs-12 a img {
+    width: 95%;
+}
+
+.contenthover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 1000;
+    -webkit-transition: background-color 500ms ease;
+    -moz-transition: background-color 500ms ease;
+    -ms-transition: background-color 500ms ease;
+    -o-transition: background-color 500ms ease;
+    transition: background-color 500ms ease;
+}
+
+.contenthover:hover {
+    background-color: transparent;
+    background-color: rgba(255, 77, 0, 0.6);
+}
+
+/* End of Portfolio pages */
 
 /* Header */
 #head .container-fluid {
@@ -789,12 +864,40 @@ pre {
     background-color: transparent;
 }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+.navbar.navbar-default.upper-navbar .nav.navbar-nav li.active a.page-link,
+.navbar.navbar-default.upper-navbar .nav.navbar-nav li a:hover {
     color: #ff4d00;
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+.navbar.navbar-default.upper-navbar .nav.navbar-nav li.active .dropdown-menu li.active a {
     color: #ff4d00;
+    background-color: #e7e7e7;
+    background-image: none;
+}
+
+.navbar.navbar-default.upper-navbar .nav.navbar-nav li .dropdown-menu a {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+@media(max-width: 768px) {
+    .navbar.navbar-default.upper-navbar .nav.navbar-nav li a {
+        background-image: none;
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        -ms-box-shadow: none;
+        box-shadow: none;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+    }
+    .navbar.navbar-default.upper-navbar .nav.navbar-nav li .dropdown-menu a {
+        font-size: 12px;
+        font-weight: 300;
+    }
+    #navbar-collapsed {
+        overflow: hidden;
+    }
 }
 
 .navbar-default {

@@ -22,7 +22,6 @@
             }
         });
  
-        $(".bx-viewport").css("height", $(window).width() / 1.9);
         //Init Parallax if not mobile device - uses jquery.detect.mobile.min.js - http://detectmobilebrowsers.com/
         if (!$.browser.mobile) {
             //Parallax effect (X-Browser) - Dropped mobile support
