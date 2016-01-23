@@ -11,9 +11,7 @@
         if ($(this).attr("class").indexOf("active") < 0 && $(this).attr("class").indexOf("open") > -1) {
             $(".navbar-dropdown").css("color", "#777");
         }
-        console.log($(this).attr("class"));
         $(this).removeClass("open");
-        console.log($(this).attr("class").indexOf("active"));
     });
 
     //Smooth Scrolling (X-Browser) - Uses jQuery Mousewheel Plugin

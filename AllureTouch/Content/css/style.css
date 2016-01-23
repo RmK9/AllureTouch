@@ -764,24 +764,81 @@ h3#recent-articles,
     margin-bottom: 50px;
 }
 
-#portfolio-container .picture-container {
-    margin-bottom: 50px;
-}
-
+#portfolio-container .picture-container,
 #portfolio-container .picture-container div.col-xs-12 {
-    margin-bottom: 45px;
+    margin-bottom: 60px;
 }
 
 #portfolio-container .picture-container div.col-xs-12 figure {
+    display: inline-block;
     text-align: center;
     position: relative;
+    height: 100%;
 }
 
-#portfolio-container .picture-container div.col-xs-12 a img {
+#portfolio-container .picture-container div.col-md-4 a img {
     width: 95%;
 }
 
-.contenthover {
+@media screen and (min-width: 992px) {
+    #portfolio-container .picture-container div.col-md-4 a #fan-img-1,
+    #portfolio-container .picture-container div.col-md-4 a #fan-img-2,
+    #portfolio-container .picture-container div.col-md-4 a #fan-img-3 {
+        height: 200px;
+    }
+
+    #portfolio-container .picture-container div.col-md-4 a #fan-img-1 {
+        max-width: 348px;
+    }
+
+    #portfolio-container .picture-container div.img-container-2 figure {
+        position: relative;
+        right: 5px;
+    }
+
+    #portfolio-container .picture-container div.img-container-3 figure {
+        position: relative;
+        left: 45px;
+    }
+
+    #portfolio-container .picture-container div.col-md-4 a #fan-img-2 {
+        width: 108%;
+        max-width: 396px;
+    }
+
+    #portfolio-container .picture-container div.col-md-4 a #fan-img-3 {
+        width: 100%;
+        max-width: 293px;
+    }
+
+    #portfolio-container .picture-container div.col-md-4 a #fan-img-4,
+    #portfolio-container .picture-container div.col-md-4 a #fan-img-5,
+    #portfolio-container .picture-container div.col-md-4 a #fan-img-6 {
+        height: 150px;
+        max-width: 348px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    #portfolio-container .picture-container div.img-container-1 {
+        margin-bottom: 20px;
+    }
+    #portfolio-container .picture-container div.img-container-2 {
+        margin-bottom: 65px;
+    }
+    #portfolio-container .picture-container div.img-container-4 {
+        margin-top: -30px;
+        margin-bottom: 37px;
+    }
+    #portfolio-container .picture-container div.img-container-6 {
+        margin-top: -20px;
+    }
+    #portfolio-container .picture-container div.img-container-6 a #fan-img-6 {
+        width: 98%;
+    }
+}
+
+.content-hover {
     position: absolute;
     top: 0;
     left: 0;
@@ -796,7 +853,7 @@ h3#recent-articles,
     transition: background-color 500ms ease;
 }
 
-.contenthover:hover {
+.content-hover:hover {
     background-color: transparent;
     background-color: rgba(255, 77, 0, 0.6);
 }
