@@ -5,16 +5,16 @@
             getItems = function() {
                 var items = [];
                 //Assign relevant picture information
-                $picContainer.find("a").each(function() {
+                $picContainer.find("a").each(function () {
+                    var img = $(this).children("img");
                     var $href = $(this).attr("href").replace("small-",""),
-                        $width = $(this).children("img").get(0).naturalWidth,
-                        $height = $(this).children("img").get(0).naturalHeight;
+                        $width = img.get(0).naturalWidth === 0 ? img.width() * 3 : img.get(0).naturalWidth,
+                        $height = img.get(0).naturalHeight === 0 ? img.height() * 3 : img.get(0).naturalHeight;
                     var item = {
                         src: $href,
                         w: $width,
                         h: $height
                     }
-                    console.log("href = " + item.src + " || width = " + item.w + " || height = " + item.h);
                     items.push(item);
                 });
                 return items;
@@ -38,8 +38,6 @@
             //Initialize PhotoSwipe
             var photoSwipe = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
             photoSwipe.init();
-            console.log("----------PhotoSwipe----------");
-            console.log(photoSwipe);
         });
     });
 
