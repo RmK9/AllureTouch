@@ -41,23 +41,25 @@
         });
     });
 
+
+
+});
+
+$(window).load(function() {
     resizeImageOverlay();
 
     //Resize image overlay when resizing the window
     $(window).bind("resize", function () {
         resizeImageOverlay();
     });
-
 });
 
 //Adjust image overlay width and height
 function resizeImageOverlay() {
     var rectangle;
-    $(".picture-container").on("load", function() {
-        $(this).find("img").each(function() {
-            rectangle = $(this).get(0).getBoundingClientRect();
-            $(this).closest("figure").find(".content-hover").css("width", rectangle.width);
-            $(this).closest("figure").find(".content-hover").css("height", rectangle.height);
-        });
+    $(".picture-container").find("img").each(function() {
+        rectangle = $(this).get(0).getBoundingClientRect();
+        $(this).closest("figure").find(".content-hover").css("width", rectangle.width);
+        $(this).closest("figure").find(".content-hover").css("height", rectangle.height);
     });
 }
