@@ -54,8 +54,10 @@
 function resizeImageOverlay() {
     var rectangle;
     $(".picture-container").find("img").each(function () {
-        rectangle = $(this).get(0).getBoundingClientRect();
-        $(this).closest("figure").find(".content-hover").css("width", rectangle.width);
-        $(this).closest("figure").find(".content-hover").css("height", rectangle.height);
+        $(this).on("load", function() {
+            rectangle = $(this).get(0).getBoundingClientRect();
+            $(this).closest("figure").find(".content-hover").css("width", rectangle.width);
+            $(this).closest("figure").find(".content-hover").css("height", rectangle.height);
+        });
     });
 }
