@@ -7,8 +7,6 @@
                 //Assign relevant picture information
                 $picContainer.find("a").each(function() {
                     var $href = $(this).attr("href").replace("small-",""),
-                        //$width = $(this).children("img").width() * 5,
-                        //$height = $width * 0.75249;
                         $width = $(this).children("img").get(0).naturalWidth,
                         $height = $(this).children("img").get(0).naturalHeight;
                     var item = {
@@ -16,6 +14,7 @@
                         w: $width,
                         h: $height
                     }
+                    console.log("href = " + item.src + " || width = " + item.w + " || height = " + item.h);
                     items.push(item);
                 });
                 return items;
@@ -39,6 +38,8 @@
             //Initialize PhotoSwipe
             var photoSwipe = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
             photoSwipe.init();
+            console.log("----------PhotoSwipe----------");
+            console.log(photoSwipe);
         });
     });
 
