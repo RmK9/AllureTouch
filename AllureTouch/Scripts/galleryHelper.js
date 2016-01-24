@@ -8,8 +8,8 @@
                 $picContainer.find("a").each(function () {
                     var img = $(this).children("img");
                     var $href = $(this).attr("href").replace("small-",""),
-                        $width = img.get(0).naturalWidth === 0 ? img.width() * 3 : img.get(0).naturalWidth,
-                        $height = img.get(0).naturalHeight === 0 ? img.height() * 3 : img.get(0).naturalHeight;
+                        $width = img.data("width"),
+                        $height = img.data("height");
                     var item = {
                         src: $href,
                         w: $width,
