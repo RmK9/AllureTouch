@@ -53,8 +53,8 @@
 //Adjust image overlay width and height
 function resizeImageOverlay() {
     var rectangle;
-    $(".picture-container").find("img").each(function () {
-        $(this).on("load", function() {
+    $(".picture-container").on("load", function() {
+        $(this).find("img").each(function() {
             rectangle = $(this).get(0).getBoundingClientRect();
             $(this).closest("figure").find(".content-hover").css("width", rectangle.width);
             $(this).closest("figure").find(".content-hover").css("height", rectangle.height);
