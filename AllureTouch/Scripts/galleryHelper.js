@@ -6,7 +6,7 @@
                 var items = [];
                 //Assign relevant picture information
                 $picContainer.find("a").each(function() {
-                    var $href = $(this).attr("href"),
+                    var $href = $(this).attr("href").replace("small-",""),
                         //$width = $(this).children("img").width() * 5,
                         //$height = $width * 0.75249;
                         $width = $(this).children("img").get(0).naturalWidth,

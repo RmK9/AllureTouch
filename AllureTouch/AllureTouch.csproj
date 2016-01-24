@@ -103,12 +103,24 @@
   <ItemGroup>
     <Content Include="500.html" />
     <Content Include="404.html" />
+    <Content Include="Content\images\portfolio\fashionAndCreative\small-artistic-photo-effects-before-and-after-4.jpg" />
+    <Content Include="Content\images\portfolio\fashionAndCreative\small-creative-picture-editing-before-and-after-1.jpg" />
+    <Content Include="Content\images\portfolio\fashionAndCreative\small-dark-beauty-photo-editing-6.jpg" />
+    <Content Include="Content\images\portfolio\fashionAndCreative\small-fashion-picture-editing-before-and-after-5.jpg" />
+    <Content Include="Content\images\portfolio\fashionAndCreative\small-glamour-photo-editing-before-and-after-photo-montage-2.jpg" />
+    <Content Include="Content\images\portfolio\fashionAndCreative\small-photo-manipulation-before-and-after-black-and-white-3.jpg" />
     <Content Include="Content\images\portfolio\realistic\natural-beauty-photo-editing-before-and-after-5.jpg" />
     <Content Include="Content\images\portfolio\realistic\photo-editing-with-background-cleaning-and-color-adjustment-2.jpg" />
     <Content Include="Content\images\portfolio\realistic\photo-manipulation-to-slim-down-before-and-after-1.jpg" />
     <Content Include="Content\images\portfolio\realistic\realistic-photo-editing-6.jpg" />
     <Content Include="Content\images\portfolio\realistic\realistic-picture-edit-before-and-after-3.jpg" />
     <Content Include="Content\images\portfolio\realistic\realistic-picture-editing-before-and-after-4.jpg" />
+    <Content Include="Content\images\portfolio\realistic\small-natural-beauty-photo-editing-before-and-after-5.jpg" />
+    <Content Include="Content\images\portfolio\realistic\small-photo-editing-with-background-cleaning-and-color-adjustment-2.jpg" />
+    <Content Include="Content\images\portfolio\realistic\small-photo-manipulation-to-slim-down-before-and-after-1.jpg" />
+    <Content Include="Content\images\portfolio\realistic\small-realistic-photo-editing-6.jpg" />
+    <Content Include="Content\images\portfolio\realistic\small-realistic-picture-edit-before-and-after-3.jpg" />
+    <Content Include="Content\images\portfolio\realistic\small-realistic-picture-editing-before-and-after-4.jpg" />
     <Content Include="Content\PhotoSwipe\default-skin\default-skin.css" />
     <Content Include="Content\PhotoSwipe\default-skin\default-skin.png" />
     <Content Include="Content\PhotoSwipe\default-skin\default-skin.svg" />
