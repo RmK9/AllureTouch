@@ -860,6 +860,48 @@ h3#recent-articles,
 
 /* End of Portfolio pages */
 
+
+
+/* 404 and 500 pages*/
+
+#error-container {
+    margin-top: 150px;
+    margin-bottom: 250px;
+}
+
+#error-container p {
+    font-family: 'Open-Sans', 'Montserrat', 'Lato-Bold', Arial, sans-serif;
+    font-size: 15px;
+    letter-spacing: 0;
+    color: rgb(88, 88, 88);
+}
+
+#error-container .stylish-input-group {
+    width: 20%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+}
+
+#error-container .stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+
+#error-container .stylish-input-group .form-control {
+    border-right: 0;
+    -webkit-box-shadow: 0 0 0;
+    -ms-box-shadow: 0 0 0;
+    box-shadow: 0 0 0; 
+	border-color: #ccc;
+}
+
+#error-container .stylish-input-group button{
+    border: 0;
+    background: transparent;
+}
+
+/* End of 404 and 500 pages */
+
 /* Header */
 #head .container-fluid {
     position: relative;
