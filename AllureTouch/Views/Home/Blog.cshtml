@@ -1,3 +1,46 @@
-﻿
-<h2>Blog</h2>
+﻿@{
+    ViewBag.Title = "Blog - AllureTouch";
+}
 
+@section ExtraCSS {
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+}
+
+@using System.Text.RegularExpressions
+@using System.Web.UI.WebControls
+@using PagedList.Mvc;
+@using PagedList;
+
+<div id="blog-container">
+    <h1 class="text-center title">Blog</h1>
+    <img src="~/Content/images/line-diamond-line.png" class="center-block line-diamond-line-separator" />
+
+    <div class="row">
+        @foreach (var post in ViewBag.OnePageOfBlogPosts)
+        {
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <a href="@Url.Action("blog-post", "Blog", new { title = post.UrlTitle })"><img class="blog-post-main-image" src="~/Content/images/blog/@post.MainImage" /></a>
+                <div class="shortened-container">
+                    <a href="@Url.Action("blog-post", "Blog", new { title = post.UrlTitle })">@post.Title</a>
+                    @{var content = Regex.Replace(System.Text.Encoding.UTF8.GetString(post.Content), "<.*?>", string.Empty);
+                        if (content.Length > 200)
+                        {
+                            <p>
+                                @Html.Raw(content.Substring(0, content.IndexOfAny(new[] { ' ', '.' }, 180)) + " [...]")
+                            </p>
+                        }
+                        else
+                        {
+                            <p>
+                                @Html.Raw(content + " [...]")
+                            </p>
+                        }
+                    }
+                </div>
+                
+            </div>
+                    }
+    </div>
+
+    @Html.PagedListPager((IPagedList)ViewBag.OnePageOfBlogPosts, page => Url.Action("Blog", new { page }))
+</div>

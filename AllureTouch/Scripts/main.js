@@ -17,8 +17,8 @@
     //Smooth Scrolling (X-Browser) - Uses jQuery Mousewheel Plugin
     $(function() {
         $.srSmoothscroll({
-            step: 60,
-            speed: 400,
+            step: 80,
+            speed: 500,
             ease: "easeOutExpo",
             target: $("body"),
             container: $(window)

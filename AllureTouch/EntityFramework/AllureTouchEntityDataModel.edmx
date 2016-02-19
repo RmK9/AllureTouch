@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="AllureTouchDbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="blogpost">
+          <Key>
+            <PropertyRef Name="PostId" />
+          </Key>
+          <Property Name="PostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Content" Type="longblob" Nullable="false" />
+          <Property Name="MainImage" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="DatePosted" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="UrlTitle" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
         <EntityType Name="imageediting">
           <Key>
             <PropertyRef Name="ImageId" />
@@ -14,7 +25,7 @@
           <Property Name="ImageName" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="ImagePath" Type="varchar" MaxLength="500" Nullable="false" />
           <Property Name="EditingType" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="EditingDescription" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="EditingDescription" Type="text" Nullable="false" />
         </EntityType>
         <EntityType Name="order">
           <Key>
@@ -23,8 +34,17 @@
           <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FullName" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="Payment" Type="double" Nullable="false" />
+          <Property Name="PaymentAmount" Type="double" Nullable="false" />
           <Property Name="AmountOfPhotos" Type="int" Nullable="false" />
+          <Property Name="OrderDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tag">
+          <Key>
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="TagId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PostId" Type="int" Nullable="false" />
+          <Property Name="Tag" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <Association Name="FK_OrderId">
           <End Role="order" Type="Self.order" Multiplicity="1">
@@ -40,12 +60,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="PostIdFK">
+          <End Role="blogpost" Type="Self.blogpost" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tag" Type="Self.tag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="blogpost">
+              <PropertyRef Name="PostId" />
+            </Principal>
+            <Dependent Role="tag">
+              <PropertyRef Name="PostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="AllureTouchDbModelStoreContainer">
+          <EntitySet Name="blogpost" EntityType="Self.blogpost" Schema="alluretouchdb" store:Type="Tables" />
           <EntitySet Name="imageediting" EntityType="Self.imageediting" Schema="alluretouchdb" store:Type="Tables" />
           <EntitySet Name="order" EntityType="Self.order" Schema="alluretouchdb" store:Type="Tables" />
+          <EntitySet Name="tag" EntityType="Self.tag" Schema="alluretouchdb" store:Type="Tables" />
           <AssociationSet Name="FK_OrderId" Association="Self.FK_OrderId">
             <End Role="order" EntitySet="order" />
             <End Role="imageediting" EntitySet="imageediting" />
+          </AssociationSet>
+          <AssociationSet Name="PostIdFK" Association="Self.PostIdFK">
+            <End Role="blogpost" EntitySet="blogpost" />
+            <End Role="tag" EntitySet="tag" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -58,6 +98,12 @@
           <AssociationSet Name="FK_OrderId" Association="AllureTouchDbModel.FK_OrderId">
             <End Role="order" EntitySet="orders" />
             <End Role="imageediting" EntitySet="imageeditings" />
+          </AssociationSet>
+          <EntitySet Name="blogposts" EntityType="AllureTouchDbModel.blogpost" />
+          <EntitySet Name="tags" EntityType="AllureTouchDbModel.tag" />
+          <AssociationSet Name="PostIdFK" Association="AllureTouchDbModel.PostIdFK">
+            <End Role="blogpost" EntitySet="blogposts" />
+            <End Role="tag" EntitySet="tags" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="imageediting">
@@ -79,8 +125,9 @@
           <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="Payment" Type="Double" Nullable="false" />
+          <Property Name="PaymentAmount" Type="Double" Nullable="false" />
           <Property Name="AmountOfPhotos" Type="Int32" Nullable="false" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="imageeditings" Relationship="AllureTouchDbModel.FK_OrderId" FromRole="order" ToRole="imageediting" />
         </EntityType>
         <Association Name="FK_OrderId">
@@ -94,6 +141,41 @@
             </Principal>
             <Dependent Role="imageediting">
               <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="blogpost">
+          <Key>
+            <PropertyRef Name="PostId" />
+          </Key>
+          <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Content" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="MainImage" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DatePosted" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="tags" Relationship="AllureTouchDbModel.PostIdFK" FromRole="blogpost" ToRole="tag" />
+          <Property Name="UrlTitle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tag">
+          <Key>
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="TagId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PostId" Type="Int32" Nullable="false" />
+          <Property Name="Tag" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="blogpost" Relationship="AllureTouchDbModel.PostIdFK" FromRole="tag" ToRole="blogpost" />
+        </EntityType>
+        <Association Name="PostIdFK">
+          <End Type="AllureTouchDbModel.blogpost" Role="blogpost" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AllureTouchDbModel.tag" Role="tag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="blogpost">
+              <PropertyRef Name="PostId" />
+            </Principal>
+            <Dependent Role="tag">
+              <PropertyRef Name="PostId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -118,11 +200,33 @@
           <EntitySetMapping Name="orders">
             <EntityTypeMapping TypeName="AllureTouchDbModel.order">
               <MappingFragment StoreEntitySet="order">
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
                 <ScalarProperty Name="AmountOfPhotos" ColumnName="AmountOfPhotos" />
-                <ScalarProperty Name="Payment" ColumnName="Payment" />
+                <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="blogposts">
+            <EntityTypeMapping TypeName="AllureTouchDbModel.blogpost">
+              <MappingFragment StoreEntitySet="blogpost">
+                <ScalarProperty Name="UrlTitle" ColumnName="UrlTitle" />
+                <ScalarProperty Name="DatePosted" ColumnName="DatePosted" />
+                <ScalarProperty Name="MainImage" ColumnName="MainImage" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tags">
+            <EntityTypeMapping TypeName="AllureTouchDbModel.tag">
+              <MappingFragment StoreEntitySet="tag">
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="TagId" ColumnName="TagId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

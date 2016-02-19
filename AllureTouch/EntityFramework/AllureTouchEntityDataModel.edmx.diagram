@@ -4,10 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="007482e7398b47f9a95d3b1be467abe4" Name="Diagram1">
+      <Diagram DiagramId="007482e7398b47f9a95d3b1be467abe4" Name="Diagram1" ZoomLevel="72">
         <EntityTypeShape EntityType="AllureTouchDbModel.imageediting" Width="1.5" PointX="5.625" PointY="1" />
-        <EntityTypeShape EntityType="AllureTouchDbModel.order" Width="1.5" PointX="3.375" PointY="1" />
+        <EntityTypeShape EntityType="AllureTouchDbModel.order" Width="1.5" PointX="3" PointY="1" />
         <AssociationConnector Association="AllureTouchDbModel.FK_OrderId" />
+        <EntityTypeShape EntityType="AllureTouchDbModel.blogpost" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="AllureTouchDbModel.tag" Width="1.5" PointX="5.625" PointY="4.375" />
+        <AssociationConnector Association="AllureTouchDbModel.PostIdFK" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

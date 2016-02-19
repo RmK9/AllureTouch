@@ -1,1 +1,71 @@
-﻿
+﻿@model AllureTouch.Models.OrderModel
+
+@{
+    ViewBag.Title = "Photo Editing Order Form - AllureTouch";
+}
+
+@section ExtraCSS {
+    <link href="~/Content/Dropzone/dropzone.css" rel="stylesheet" type="text/css" />
+}
+
+@section ExtraJS {
+    <script src="~/Scripts/dropzone.js"></script>
+    <script src="~/Scripts/orderFormHelper.js"></script>
+}
+
+<div id="order-form-container">
+    <h1 class="text-center title">Photo Editing Order Form</h1>
+    <img src="~/Content/images/line-diamond-line.png" class="center-block line-diamond-line-separator" />
+    <p class="text-center italic-text">
+        Fill out the information fields below, choose the desired service(s),
+        upload your photo(s) for editing and add detail to the Photo Editing Instructions field.
+        Your information and photos will not be shared with third parties for marketing or other purposes.
+        When you are finished completing the Order Form, click Submit and you will be redirected to Payment page.
+    </p>
+
+    <hr class="center-block top-hr" />
+
+    <p class="form-title italic-text">Enter Your Information:</p>
+    @{ Html.BeginForm("SaveOrder", "Home", FormMethod.Post, new { @id = "order-form" }); }
+    <div id="inside-order-form-container">
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.FullName)<span>*</span>
+            @Html.TextBoxFor(m => m.FullName, new { @id = "name", @class = "form-control", required = "" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)<span>*</span>
+            @Html.TextBoxFor(m => m.Email, new
+       {
+           @id = "email",
+           @class = "form-control",
+           required = "",
+           @type = "email",
+           @data_fv_field = "email"
+       })
+        </div>
+
+        <div id="imageDropzone" class="dropzone">
+            <div class="fallback">
+                <input name="file" type="file" multiple />
+                <input type="submit" value="Upload" />
+            </div>
+        </div>
+
+        <hr class="center-block top-hr" />
+
+        <p class="form-title italic-text hidden-tag">Specify Editing Type and add a Description below to each of the images</p>
+
+        <div id="dynamic-image-container">
+        </div>
+
+        <div id="loading-gif" class="hidden-tag">
+            <img src="~/Content/images/bx_loader.gif" alt="Loading..." />
+        </div>
+
+        <button type="submit" class="btn btn-default" disabled="disabled">Submit</button>
+    </div>
+    @{ Html.EndForm();
+       Html.RenderPartial("Partials/_Modal"); }
+
+</div>

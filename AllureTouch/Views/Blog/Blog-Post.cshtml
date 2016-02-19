@@ -1,0 +1,92 @@
+﻿@using System.Text.RegularExpressions
+@model AllureTouch.EntityFramework.blogpost
+
+@{
+    ViewBag.Title = @Model.Title + " - AllureTouch";
+}
+
+@section ExtraJS{
+    <script src="~/Scripts/socialSharers.js"></script>
+}
+
+<div id="blog-post-container">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 blog-post-content">
+            <img src="~/Content/images/blog/@Model.MainImage" />
+            @Html.Raw(System.Text.Encoding.UTF8.GetString(Model.Content))
+
+            <hr />
+
+            <br />
+            <div id="share-and-tags-container">
+                <p>Share this:</p>
+                <div id="share-link-icons">
+                    <a href="" onclick="shareCurrentPageOnFB()" target="_blank" alt="Share on Facebook">
+                        <i class="fa fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="" onclick="shareCurrentPageOnTW()" target="_blank" alt="Share on Twitter">
+                        <i class="fa fa-twitter fa-2x"></i>
+                    </a>
+                    <a href="" onclick="shareCurrentPageOnGP()" target="_blank" alt="Share on Google Plus">
+                        <i class="fa fa-google-plus fa-2x"></i>
+                    </a>
+                    <a href="" onclick="shareCurrentPageOnLI()" target="_blank" alt="Share on LinkedIn">
+                        <i class="fa fa-linkedin fa-2x"></i>
+                    </a>
+                    <a href="" onclick="shareCurrentPageOnPI()" target="_blank" alt="Share on Pinterest">
+                        <i class="fa fa-pinterest fa-2x"></i>
+                    </a>
+                </div>
+
+                <br />
+
+                <p>Tags:</p>
+                <div id="tags-container">
+                    @{
+                        foreach (var tag in Model.tags)
+                        {
+                            <a href="#">@tag.Tag</a>
+                        }
+                        if (Model.tags.Count == 0)
+                        {
+                            <p>No tags found for this article</p>
+                        }
+                    }
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-4 side-container">
+            <div id="side-content">
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control" placeholder="Search...">
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+
+                <p id="suggestion-text">YOU MAY ALSO LIKE</p>
+
+                @foreach (var post in ViewBag.BlogPosts)
+                {
+                    if (post.PostId != Model.PostId)
+                    {
+                        <div class="side-blog-post">
+                            <div>
+                                <a href="@Url.Action("blog-post", "Blog", new {title = post.UrlTitle})"><img class="blog-post-main-image" src="~/Content/images/blog/@post.MainImage" /></a>
+                                <a href="@Url.Action("blog-post", "Blog", new {title = post.UrlTitle})">@post.Title</a>
+                            </div>
+                            <p class="date-posted">@post.DatePosted.ToString("MMMM dd, yyyy")</p>
+                        </div>
+                    }
+
+                }
+            </div>
+        </div>
+    </div>
+
+</div>

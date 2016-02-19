@@ -12,22 +12,22 @@ namespace AllureTouch.EntityFramework
     using System;
     using System.Collections.Generic;
     
-    public partial class order
+    public partial class blogpost
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public order()
+        public blogpost()
         {
-            this.imageeditings = new HashSet<imageediting>();
+            this.tags = new HashSet<tag>();
         }
     
-        public int OrderId { get; set; }
-        public string FullName { get; set; }
-        public string Email { get; set; }
-        public double PaymentAmount { get; set; }
-        public int AmountOfPhotos { get; set; }
-        public System.DateTime OrderDate { get; set; }
+        public int PostId { get; set; }
+        public string Title { get; set; }
+        public byte[] Content { get; set; }
+        public string MainImage { get; set; }
+        public DateTime DatePosted { get; set; }
+        public string UrlTitle { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<imageediting> imageeditings { get; set; }
+        public virtual ICollection<tag> tags { get; set; }
     }
 }

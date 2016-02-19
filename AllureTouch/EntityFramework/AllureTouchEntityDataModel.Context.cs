@@ -27,5 +27,7 @@ namespace AllureTouch.EntityFramework
     
         public virtual DbSet<imageediting> imageeditings { get; set; }
         public virtual DbSet<order> orders { get; set; }
+        public virtual DbSet<blogpost> blogposts { get; set; }
+        public virtual DbSet<tag> tags { get; set; }
     }
 }

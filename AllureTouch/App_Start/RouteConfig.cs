@@ -13,6 +13,10 @@ namespace AllureTouch
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute("BlogPostRoute", "blog/blog-post/{title}",
+                            new { controller = "blog", action = "blog-post", title = "" }
+                            );
+
             routes.MapRoute("SpecificRoute", "{action}/{id}",
                             new { controller = "Home", action = "Index", id = "" }
                             );

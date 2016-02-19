@@ -1,4 +1,6 @@
-﻿@model AllureTouch.Models.IndexModel
+﻿@{
+    ViewBag.Title = "Photo Editing - Home - AllureTouch";
+}
 
 @section ExtraCSS {
     <link href="~/Content/css/jquery.bxslider.css" rel="stylesheet" type="text/css" />
@@ -100,14 +102,12 @@
     <h3 id="recent-articles">Recent Articles</h3>
     <img src="~/Content/images/line-diamond-line.png" class="center-block line-diamond-line-separator"/>
     <div class="row article-container">
-        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-            Some Article Container1
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-            Some Article Container2
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 text-center">
-            Some Article Container3
-        </div>
+        @foreach (var post in ViewBag.Articles)
+        {
+            <div class="col-xs-12 col-sm-6 col-md-4 articles">
+                <a href="@Url.Action("blog-post", "Blog", new { title = post.UrlTitle })"><img class="blog-post-main-image" src="~/Content/images/blog/@post.MainImage" /></a>
+                <a href="@Url.Action("blog-post", "Blog", new { title = post.UrlTitle })">@post.Title</a>
+            </div>
+        }
     </div>
 </div>

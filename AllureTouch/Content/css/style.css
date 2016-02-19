@@ -6,10 +6,22 @@ body {
     position: relative;
     padding-top: 20px;
     padding-bottom: 20px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", "Open Sans", "Lato Bold", sans-serif;
     font-weight: 400;
     font-size: 12px;
     letter-spacing: 1.5px;
+}
+
+p::selection, h1::selection, h2::selection,
+h3::selection, label::selection, span::selection, a::selection {
+    background: black;
+    color: white;
+}
+
+p::-moz-selection, h1::-moz-selection, h2::-moz-selection,
+h3::-moz-selection, label::-moz-selection, span::-moz-selection, a::-moz-selection {
+    background: black;
+    color: white;
 }
 
 .body-content {
@@ -367,8 +379,30 @@ h3#recent-articles,
     margin-bottom: 50px;
 }
 
-.article-container {
+#main-container .article-container {
     margin-bottom: 70px;
+}
+
+#main-container .articles img {
+    width: 100%;
+    height: 100%;
+    min-height: 221px;
+}
+
+#main-container .articles a {
+    margin-top: 30px;
+    font-size: 16px;
+    color: black;
+    -webkit-transition: 0.2s linear all;
+    -moz-transition: 0.2s linear all;
+    -ms-transition: 0.2s linear all;
+    -o-transition: 0.2s linear all;
+    transition: 0.2s linear all;
+    text-align: left;
+}
+
+#main-container .articles a:hover {
+    color: #ff4d00;
 }
 
 /* End of Index Page */
@@ -482,7 +516,7 @@ h3#recent-articles,
 }
 
 #contact-us-form button {
-    font-family: "Montserrat", "Open Sans", "Arial", sans-serif;
+    font-family: 'Montserrat', 'Open-Sans', 'Arial', sans-serif;
     font-size: 13px;
     letter-spacing: 2px;
     color: white;
@@ -606,7 +640,7 @@ h3#recent-articles,
 .pricing-list .service-title,
 .pricing-list h1,
 .pricing-list a {
-    font-family: 'Lato-Bold', 'Montserrat', 'Open Sans', Arial, sans-serif;
+    font-family: 'Lato-Bold', 'Montserrat', 'Open-Sans', Arial, sans-serif;
 }
 
 .pricing-list h1 {
@@ -659,7 +693,7 @@ h3#recent-articles,
 }
 
 #main-container .pricing-list .bg-red-box {
-    font-family: 'Montserrat', 'Lato-Bold', 'Open Sans', Arial, sans-serif;
+    font-family: 'Montserrat', 'Lato-Bold', 'Open-Sans', Arial, sans-serif;
 }
 
 #main-container .bg-red-box.no-margins {
@@ -690,7 +724,7 @@ h3#recent-articles,
 }
 
 #main-container .percentage-circles-container p.lato-bold {
-    font-family: 'Lato-Bold', 'Montserrat', 'Open Sans', Arial, sans-serif;
+    font-family: 'Lato-Bold', 'Montserrat', 'Open-Sans', Arial, sans-serif;
     font-size: 24px;
     color: black;
     margin-top: 5px;
@@ -716,7 +750,7 @@ h3#recent-articles,
 
 #main-container .percentage-circles-container span,
 #main-container .percentage-circles-container p {
-    font-family: 'Lato-Bold', 'Montserrat', 'Open Sans', Arial, sans-serif;
+    font-family: 'Lato-Bold', 'Montserrat', 'Open-Sans', Arial, sans-serif;
     font-size: 20px;
     font-weight: 500;
     color: black;
@@ -860,7 +894,404 @@ h3#recent-articles,
 
 /* End of Portfolio pages */
 
+/* Order Form Page */
 
+#order-form-container {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    position: relative;
+    width: 86%;
+    left: 7%;
+    font-family: 'Open-Sans', 'Montserrat', 'Lato-Bold', Arial, sans-serif;
+    letter-spacing: 0;
+}
+
+#order-form-container h1 {
+    font-family: 'Lato-Bold', 'Open-Sans', 'Montserrat', Arial, sans-serif;
+}
+
+#order-form-container p.text-center.italic-text {
+    margin-right: auto;
+    margin-left: auto;
+    width: 65%;
+    color: rgb(108, 108, 108);
+}
+
+.top-hr {
+    width: 70%;
+    border: 1px solid #e8e8e8;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#order-form-container #order-form {
+    font-size: 16px;
+}
+
+#order-form-container #order-form #inside-order-form-container div.form-group {
+    background-color: rgb(239, 239, 239);
+    padding: 10px 10px 20px 10px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#order-form-container #order-form #inside-order-form-container div.form-group input#name,
+#order-form-container #order-form #inside-order-form-container div.form-group input#email {
+    height: 50px;
+}
+
+#order-form-container #order-form #inside-order-form-container div.form-group input#name {
+    width: 200px;
+}
+
+#order-form-container #order-form #inside-order-form-container div.form-group input#email {
+    width: 300px;
+}
+
+#order-form-container #order-form label {
+    font-weight: normal;
+}
+
+#order-form-container #order-form span {
+    color: red;
+}
+
+/* Dropzone specific style */
+#order-form-container #order-form .dropzone .dz-message span {
+    color: rgb(131, 131, 131);
+    font-weight: 600;
+}
+/* */
+
+#order-form-container #order-form .hidden-tag {
+    display: none;
+}
+
+#order-form-container #order-form #loading-gif {
+    text-align: center;
+    height: 300px;
+}
+
+#order-form-container #order-form #loading-gif img {
+    position: relative;
+    top: 30%;
+}
+
+#order-form-container #order-form #dynamic-image-container .image-container {
+    position: relative;
+    background-color: #eee;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+#order-form-container #order-form #dynamic-image-container .image-container div.col-xs-12 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#order-form-container #order-form #dynamic-image-container .image-container div.col-xs-12 label {
+    background-image: none;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#order-form-container #order-form #dynamic-image-container .image-container div.col-xs-12 label.middle-label {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#order-form-container #order-form #dynamic-image-container .image-container div.col-xs-12 label:hover {
+    background-color: #f1f1f1;
+}
+
+#order-form-container #order-form #dynamic-image-container .image-container div.col-xs-12 hr.image-container-hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid #000000;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#order-form-container #order-form #dynamic-image-container .image-container img.uploaded-image {
+    max-height: 500px;
+}
+
+#order-form-container #order-form #dynamic-image-container .image-container div.col-xs-12 textarea {
+    max-width: 100%;
+    height: 150px;
+    max-height: 350px;   
+}
+
+#order-form-container #order-form #dynamic-image-container .image-container span.remove-image {
+    position: absolute;
+    top: 2%;
+    right: 0.6%;
+    color: black;
+    font-size: 25px;
+    z-index: 10;
+}
+
+#order-form-container #order-form #dynamic-image-container .image-container span.remove-image:hover {
+    color: rgb(116, 116, 116);
+    cursor: pointer;
+}
+
+#order-form-container #order-form button {
+    font-family: 'Open-Sans', 'Lato-Bold', 'Montserrat', Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: white;
+    background-image: none;
+    border: none;
+    border-color: transparent;
+    background-color: #ff4d00;
+    padding: 12px 20px;
+    margin-top: 30px;
+    -webkit-transition: background-color 0.3s ease-in;
+    -moz-transition: background-color 0.3s ease-in;
+    -ms-transition: background-color 0.3s ease-in;
+    -o-transition: background-color 0.3s ease-in;
+    transition: background-color 0.3s ease-in;
+}
+
+#order-form-container #order-form button:hover {
+    background-color: #ff7c44;
+}
+
+.remove-picture-modal {
+    width: 30%;
+}
+
+.remove-picture-modal p {
+    font-size: 14px;
+}
+
+/* End of Order Form Page */
+
+/* Blog Pages */
+
+#blog-container {
+    position: relative;
+    width: 86%;
+    left: 7%;
+    font-family: 'Open-Sans', 'Montserrat', 'Lato-Bold', Arial, sans-serif;
+    letter-spacing: 0;
+}
+
+#blog-container h1, #blog-container h2, #blog-container h3 {
+    letter-spacing: 0;
+    color: #222222;
+    font-family: "Lato-Bold", "Lucida Grande", sans-serif;
+    margin-top: 120px;
+}
+
+#blog-container p {
+    font-size: 15px;
+    color: #4c4c4c;
+    margin-bottom: 30px;
+    line-height: 26px;
+}
+
+#blog-container a {
+    text-decoration: none;
+    text-align: center;
+}
+
+#blog-container img.blog-post-main-image {
+    width: 100%;
+}
+
+#blog-container .shortened-container {
+    display: inline-block;
+    position: relative;
+    left: 10%;
+    margin-top: 30px;
+    width: 80%;
+}
+
+#blog-container .shortened-container a {
+    font-size: 16px;
+    color: black;
+}
+
+#blog-container .shortened-container a:hover {
+    color: #ff4d00;
+}
+
+#blog-container .shortened-container p {
+    color: #7e7e7e;
+}
+
+#blog-container .pagination-container {
+    text-align: center;
+}
+
+#blog-post-container {
+    position: relative;
+    width: 90%;
+    left: 7%;
+    font-family: 'Open-Sans', 'Montserrat', 'Lato-Bold', Arial, sans-serif;
+    letter-spacing: 0;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+@media (min-width: 768px) {
+    #blog-post-container div.col-sm-8 {
+        width: 70%;
+    }
+    #blog-post-container div.col-sm-4 {
+        width: 30%;
+    }
+}
+
+#blog-post-container div.col-sm-4 p {
+    text-align: center;
+}
+
+#blog-post-container h1, #blog-post-container h2, #blog-post-container h3 {
+    letter-spacing: 0;
+    color: #222222;
+    font-family: "Lato-Bold", "Lucida Grande", sans-serif;
+    margin-top: 120px;
+}
+
+#blog-post-container p {
+    font-size: 15px;
+    color: #4c4c4c;
+    line-height: 26px;
+}
+
+#blog-post-container a {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+#blog-post-container hr {
+    border: 1px solid #e8e8e8;
+}
+
+#blog-post-container .blog-post-content img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 25px;
+}
+
+#blog-post-container #share-and-tags-container p {
+    font-size: 12px;
+    display: inline-block;
+}
+
+#blog-post-container i {
+    color: black;
+    margin-left: 20px;
+    -webkit-transition: color ease 300ms;
+    -moz-transition: color ease 300ms;
+    -ms-transition: color ease 300ms;
+    -o-transition: color ease 500ms;
+    transition: color ease 300ms;
+}
+
+#blog-post-container i:hover {
+    color: #ff4d00;
+}
+
+#blog-post-container #share-link-icons {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+
+#blog-post-container #tags-container {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#blog-post-container #tags-container a {
+    padding: 7px 10px;
+    border: 1px solid;
+    margin-left: 5px;
+    color: black;
+    -webkit-transition: 0.2s linear all;
+    -moz-transition: 0.2s linear all;
+    -ms-transition: 0.2s linear all;
+    -o-transition: 0.2s linear all;
+    transition: 0.2s linear all;
+}
+
+#blog-post-container #tags-container a:hover {
+    background-color: #ff4d00;
+    border-color: #ff4d00;
+    color: white;
+}
+
+#blog-post-container #side-content {
+    margin-left: 50px;
+}
+
+#blog-post-container .stylish-input-group {
+    width: 80%;
+}
+
+#blog-post-container .stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+
+#blog-post-container .stylish-input-group .form-control {
+    height: 40px;
+    border-right: 0;
+    -webkit-box-shadow: 0 0 0;
+    -ms-box-shadow: 0 0 0;
+    box-shadow: 0 0 0; 
+	border-color: #ccc;
+}
+
+#blog-post-container .stylish-input-group button{
+    border: 0;
+    background: transparent;
+}
+
+#blog-post-container .side-container #suggestion-text {
+    margin-top: 50px;
+    font-weight: bold;
+    text-align: left;
+    font-family: 'Montserrat', 'Open-Sans', 'Lato-Bold', Arial, sans-serif;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+#blog-post-container .side-container img {
+    width: 50px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+#blog-post-container .side-container .side-blog-post {
+    margin-bottom: 35px;
+}
+
+#blog-post-container .side-container .side-blog-post p,
+#blog-post-container .side-container .side-blog-post a {
+    font-size: 12px;
+    color: #878787;
+    text-align: left;
+}
+
+#blog-post-container .side-container .side-blog-post div {
+    display: inline-flex;
+}
+
+#blog-post-container .side-container .side-blog-post p.date-posted {
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+/* End of Blog Pages */
 
 /* 404 and 500 pages*/
 
@@ -888,6 +1319,7 @@ h3#recent-articles,
 }
 
 #error-container .stylish-input-group .form-control {
+    height: 40px;
     border-right: 0;
     -webkit-box-shadow: 0 0 0;
     -ms-box-shadow: 0 0 0;
