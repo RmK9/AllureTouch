@@ -124,7 +124,9 @@
     <Content Include="Content\images\blog\best-coco-chanel-quotes\coco-chanel-quote-about-perfume.jpg" />
     <Content Include="Content\images\blog\best-coco-chanel-quotes\main.jpg" />
     <Content Include="Content\images\blog\best-coco-chanel-quotes\quotes-of-coco-chanel-about-hair.jpg" />
-    <Content Include="Content\images\blog\test\logo.jpg" />
+    <Content Include="Content\images\blog\picture-editing-infographic\infographic.jpg" />
+    <Content Include="Content\images\blog\picture-editing-infographic\main.jpg" />
+    <Content Include="Content\images\blog\test\main.jpg" />
     <Content Include="Content\images\blog\top-10-cat-pictures\baby-girl-vs-kitten.jpg" />
     <Content Include="Content\images\blog\top-10-cat-pictures\flowers-and-girl-vs-flowers-and-cat.jpg" />
     <Content Include="Content\images\blog\top-10-cat-pictures\girl-eye-vs-cat-eye.jpg" />
