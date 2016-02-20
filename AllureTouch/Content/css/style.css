@@ -405,6 +405,31 @@ h3#recent-articles,
     color: #ff4d00;
 }
 
+#search-form-container {
+    position: absolute;
+    width: 250px;
+    right: 25px;
+    top: 55px;
+}
+
+#search-form-container .stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+
+#search-form-container .stylish-input-group .form-control {
+    height: 40px;
+    border-right: 0;
+    -webkit-box-shadow: 0 0 0;
+    -ms-box-shadow: 0 0 0;
+    box-shadow: 0 0 0; 
+	border-color: #ccc;
+}
+
+#search-form-container .stylish-input-group button{
+    border: 0;
+    background: transparent;
+}
+
 /* End of Index Page */
 
 /* FAQ Page */
@@ -1126,6 +1151,10 @@ h3#recent-articles,
     color: #7e7e7e;
 }
 
+#blog-container div.row div.col-md-4 {
+    min-height: 480px;
+}
+
 #blog-container .pagination-container {
     text-align: center;
 }
@@ -1292,6 +1321,26 @@ h3#recent-articles,
 }
 
 /* End of Blog Pages */
+
+/* Search page container */
+
+#main-container .search-results-container {
+    margin-bottom: 100px;
+}
+
+#main-container .search-results-container a {
+    text-align: left;
+}
+
+#main-container .search-results-container div.row {
+    margin-bottom: 50px;
+}
+
+#main-container .search-results-container h2 {
+    margin-top: 0;
+}
+
+/* End of Search page*/
 
 /* 404 and 500 pages*/
 

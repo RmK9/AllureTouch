@@ -345,6 +345,7 @@
     <Content Include="Views\Home\Order-Form.cshtml" />
     <Content Include="Views\Home\Partials\_Modal.cshtml" />
     <Content Include="Views\Blog\Blog-Post.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

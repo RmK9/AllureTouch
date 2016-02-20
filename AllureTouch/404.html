@@ -99,14 +99,14 @@
             <p class="text-center">It seems we can’t find what you’re looking for.</p>
             <p class="text-center">Perhaps searching can help.</p>
 
-            <div class="input-group stylish-input-group">
-                <input type="text" class="form-control" placeholder="Search...">
+            <form method="GET" action="~/search" class="input-group stylish-input-group" role="search">
+                <input name="query" type="search" class="form-control" placeholder="Search...">
                 <span class="input-group-addon">
-                    <button type="submit">
+                    <button id="search-submit-button" type="submit">
                         <span class="glyphicon glyphicon-search"></span>
                     </button>
                 </span>
-            </div>
+            </form>
 
         </div>
     </div>

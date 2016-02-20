@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Services.Description;
+using System.Web.WebPages;
 using AllureTouch.Models;
 using AllureTouch.EntityFramework;
 using PagedList;
@@ -65,7 +67,7 @@ namespace AllureTouch.Controllers
         {
             var pageNumber = page ?? 1;
 
-            var blogPosts = _entities.blogposts.ToList().ToPagedList(pageNumber, 6);
+            var blogPosts = _entities.blogposts.OrderByDescending(k => k.DatePosted).ToList().ToPagedList(pageNumber, 6);
 
             ViewBag.OnePageOfBlogPosts = blogPosts;
             return View();
@@ -216,7 +218,29 @@ namespace AllureTouch.Controllers
 
             _entities.SaveChanges();
 
-            return Json(new { Message = "bla"});
+            return Json(new { Message = "Would proceed with PayPal API..."});
+        }
+
+        [HttpGet]
+        [ActionName("search")]
+        public ActionResult Search(string query)
+        {
+            var results = new List<blogpost>();
+
+            if (!query.IsEmpty())
+            {
+                results = _entities.blogposts.Where(bp => bp.tags.Any(t => t.Tag.Contains(query))).ToList();
+            }
+            else
+            {
+                //In case it's null (via wrong URL parameter name)
+                query = "";
+            }
+
+            ViewBag.SearchResults = results;
+            ViewBag.Query = query;
+
+            return View();
         }
 
     }

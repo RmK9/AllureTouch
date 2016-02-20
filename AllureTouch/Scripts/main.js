@@ -55,7 +55,16 @@ function fixUpperPageResponsiveness() {
             "top": "0",
             "padding-bottom": "15px"
         });
+        $("#search-form-container").css({
+            "position": "relative",
+            "right": "0",
+            "top": "0",
+            "margin-left": "auto",
+            "margin-right": "auto",
+            "margin-bottom": "20px"
+        });
     } else {
         $(".upper-social-icons").css({ "position": "absolute", "left": "40px", "top": "55px" });
+        $("#search-form-container").css({ "position": "absolute", "right": "25px", "top": "55px", "margin": "0" });
     }
 }

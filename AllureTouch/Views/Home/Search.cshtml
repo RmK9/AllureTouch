@@ -1,0 +1,53 @@
+﻿@using System.Text.RegularExpressions
+@{
+    ViewBag.Title = (ViewBag.Query != "" ? ViewBag.Query : "No Results") + " - Search - AllureTouch";
+}
+
+<div id="main-container">
+    @if (ViewBag.SearchResults.Count != 0)
+    {
+        <h1 class="text-center title">Search results for: @ViewBag.Query</h1>
+    }
+    else
+    {
+        <h1 class="text-center title">Sorry! Nothing found for: @ViewBag.Query</h1>
+    }
+
+    <img src="~/Content/images/line-diamond-line.png" class="center-block line-diamond-line-separator"/>
+
+    @if (ViewBag.SearchResults.Count != 0)
+    {
+        <div class="row search-results-container">
+            @foreach (var post in ViewBag.SearchResults)
+            {
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <a href="@Url.Action("blog-post", "Blog", new {title = post.UrlTitle})"><img class="blog-post-main-image img-thumbnail" src="~/Content/images/blog/@post.MainImage"/></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-8">
+                        <a href="@Url.Action("blog-post", "Blog", new {title = post.UrlTitle})">
+                            <h2>@post.Title</h2>
+                        </a>
+                        @{var content = Regex.Replace(System.Text.Encoding.UTF8.GetString(post.Content), "<.*?>", string.Empty);
+                            if (content.Length > 350)
+                            {
+                                <p>
+                                    @Html.Raw(content.Substring(0, content.IndexOfAny(new[] {'.'}, 330) + 2) + " [...]")
+                                </p>
+                            }
+                            else
+                            {
+                                <p>
+                                    @Html.Raw(content + " [...]")
+                                </p>
+                            }
+                        }
+                        <i>@post.DatePosted.ToString("MMMM dd, yyyy")</i>
+                    </div>
+                </div>
+
+            }
+        </div>
+    }
+
+</div>

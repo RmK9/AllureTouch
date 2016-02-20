@@ -57,11 +57,22 @@
                     </a>
                 </span>
             </div>
+            <div id="search-form-container">
+                <form method="GET" action="~/search" class="input-group stylish-input-group" role="search">
+                    <input name="query" type="search" class="form-control" placeholder="Search...">
+                    <span class="input-group-addon">
+                        <button id="search-submit-button" type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </form>
+            </div>
             <div class="upper-logo">
                 <a class="logo" href="@Url.Action("Index", "Home")">
                     <img src="@Url.Content("~/Content/images/logo.jpg")" alt="AllureTouch" class="img-responsive center-block" />
                 </a>
             </div>
+
         </div>
 
         <nav class="navbar navbar-default upper-navbar">
